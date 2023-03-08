@@ -1,0 +1,7 @@
+// Mixins for global fonts defined by style guide of project
+
+@mixin montserrat-bold($size: 16px) {
+  font-family: var(--font-montserrat);
+  font-size: $size;
+  font-weight: bold;
+}

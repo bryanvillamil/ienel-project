@@ -1,0 +1,10 @@
+.husky
+.next
+.swc
+node_modules
+*.png
+*.prettierignore
+*.ico
+*.svg
+*.gitignore
+*.nvmrc

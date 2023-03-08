@@ -1,0 +1,11 @@
+@use '~styles/colors' as colors;
+@use '~styles/layout' as layout;
+@use '~styles/fonts' as fonts;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: colors.$bg-main;
+  @include fonts.montserrat-bold(layout.rem(16px));
+  color: colors.$text-main;
+}

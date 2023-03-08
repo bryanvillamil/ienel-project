@@ -1,0 +1,70 @@
+// Valores de z-index
+$z-back: -1;
+$z-none: 0;
+$z-floor: 1;
+$z-medium: 10;
+$z-up: 50;
+$z-top: 100;
+$z-super: 200;
+
+// Valores base de maquetación
+$mobile: 320px;
+$tablet: 768px;
+$laptop: 1366px;
+$desktop: 1920px;
+
+// Función para ajustar tamaños en pixeles respecto al ancho del viewport
+@function vw($size, $base: $mobile) {
+  @return ($size / $base) * 100vw;
+}
+
+// Función para parsear a rem dimesiones en base al tamaño default de fuente en navegadores (16px)
+@function rem($size, $base: 16px) {
+  @return ($size / $base) * 1rem;
+}
+
+// Función para parsear a em dimesiones en base al tamaño default de fuente en navegadores (16px)
+@function em($size, $base: 16px) {
+  @return ($size / $base) * 1em;
+}
+
+// Mixin para asignar igual ancho y alto
+@mixin make-square($size) {
+  height: $size;
+  width: $size;
+}
+
+// Mixin para fijar el mismo tamaño para el min y max height
+@mixin height($height: initial) {
+  max-height: $height;
+  min-height: $height;
+}
+
+// Mixin para fijar el mismo tamaño para el min y max width
+@mixin width($width: initial) {
+  max-width: $width;
+  min-width: $width;
+}
+
+// Breakpoints (tailwind-based)
+// Media queries
+@mixin from($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+// $mobile
+$sm: 640px;
+// $tablet
+$md: 768px;
+// $laptop
+$lg: 1024px;
+$xl: 1280px;
+$xxl: 1536px;
+
+// Set as flex
+@mixin flex($align: initial, $justify: initial) {
+  align-items: $align;
+  display: flex;
+  justify-content: $justify;
+}

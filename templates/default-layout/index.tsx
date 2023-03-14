@@ -1,15 +1,18 @@
-import { Header, Footer } from "@components/index";
+import { Seo, Header, Footer } from '@components/index'
+import { Main } from './styledComponent'
 
 interface DefaultLayoutProps {
-  children?: JSX.Element[] | JSX.Element | string;
+  children?: JSX.Element[] | JSX.Element | React.ReactNode
+  title: string
 }
 
-export default function DefaultLayout({ children }: DefaultLayoutProps) {
+export default function DefaultLayout({ children, title }: DefaultLayoutProps) {
   return (
     <>
+      <Seo title={title} />
       <Header />
-      <main>{children}</main>
+      <Main>{children}</Main>
       <Footer />
     </>
-  );
+  )
 }

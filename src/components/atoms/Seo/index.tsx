@@ -1,17 +1,17 @@
-import Head from "next/head";
+import Head from 'next/head'
 
-interface SEOProps {
-  title?: string;
+interface IPropsSeo {
+  title?: string
 }
 
-export const SEO = ({ title }: SEOProps) => {
-  const defaultTitle = "IENEL SAS";
-  const pageTitle = title ?? "";
+export const Seo = ({ title }: IPropsSeo) => {
+  const defaultTitle = 'IENEL SAS'
+  const pageTitle = title ?? ''
   return (
     <Head>
       <title>
-        {pageTitle !== "" ? `${pageTitle} | ${defaultTitle}` : defaultTitle}
+        {pageTitle !== '' ? `${pageTitle} | ${defaultTitle}` : defaultTitle}
       </title>
     </Head>
-  );
-};
+  )
+}

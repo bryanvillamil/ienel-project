@@ -1,5 +1,32 @@
-import { HeaderCustom } from "./styledComponents";
+import { useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import Logo from '@images/logo-ienel.png'
+import { Navbar } from '@components/index'
+
+import {
+  HeaderCustom,
+  HeaderLogo,
+  ContentLogo,
+  HeaderMenu
+} from './styledComponents'
 
 export const Header = () => {
-  return <HeaderCustom>Component Header</HeaderCustom>;
-};
+  const [navActive, setNavActive] = useState(false)
+
+  return (
+    <HeaderCustom>
+      <HeaderLogo>
+        <Link href="/">
+          <ContentLogo>
+            <Image src={Logo} alt="Logo Ienel" />
+          </ContentLogo>
+        </Link>
+      </HeaderLogo>
+
+      <HeaderMenu>
+        <Navbar navActive={navActive} setNavActive={setNavActive} />
+      </HeaderMenu>
+    </HeaderCustom>
+  )
+}

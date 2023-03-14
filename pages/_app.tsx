@@ -1,12 +1,12 @@
-import "~styles/globals.scss";
-import type { AppProps } from "next/app";
-import { ThemeProvider } from "styled-components";
-import { Montserrat } from "@next/font/google";
+import '~styles/globals.scss'
+import type { AppProps } from 'next/app'
+import { ThemeProvider } from 'styled-components'
+import { Montserrat } from '@next/font/google'
 
 const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-});
+  variable: '--font-montserrat',
+  subsets: ['latin']
+})
 
 const theme = {
   breakpoints: {
@@ -15,9 +15,9 @@ const theme = {
     md: 768,
     lg: 1024,
     xl: 1200,
-    xxl: 1500,
-  },
-};
+    xxl: 1500
+  }
+}
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -31,5 +31,5 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </ThemeProvider>
     </>
-  );
+  )
 }

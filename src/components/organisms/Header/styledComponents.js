@@ -11,7 +11,6 @@ export const HeaderCustom = styled.header`
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 	height: 80px;
 	transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-	overflow-y: scroll;
 	${breakpoint('md')`
 		height: 100px;
 	`}

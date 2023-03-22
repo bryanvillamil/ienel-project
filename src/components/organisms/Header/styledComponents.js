@@ -4,8 +4,8 @@ import { breakpoint } from 'styled-components-breakpoint';
 export const HeaderCustom = styled.header`
 	position: sticky;
 	width: 100%;
-  z-index: 30;
-  top: 0;
+	z-index: 30;
+	top: 0;
 	display: flex;
 	/* background: #f1f1f1; */
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -21,13 +21,14 @@ export const HeaderCustom = styled.header`
 
 
 export const HeaderLogo = styled.div`
-  display: flex;
+	cursor: pointer;
+  	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 80px;
 	height: 100%;
 	max-width: 180px;
-  padding: 0 25px 0 0;
+  	padding: 0 25px 0 0;
 	order: 2;
 	transition: all 0.5s ease;
 	a {

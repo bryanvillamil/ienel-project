@@ -11,9 +11,12 @@ export const NavItem = ({
   text: string
   active: boolean
 }) => {
+  
   return (
-    <LinkCustom href={href} className={`${active ? 'active' : ''}`}>
+    <>
+    <LinkCustom to={text} spy={true} smooth={true} duration={500} offset={-100} className={`${active ? 'active' : ''}`} >
       {text}
     </LinkCustom>
+    </>
   )
 }

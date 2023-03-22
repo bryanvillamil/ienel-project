@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Link from 'next/link'
+import {Link} from 'react-scroll'
 import Image from 'next/image'
 import Logo from '@images/logo-ienel.png'
 import { Navbar } from '@components/index'
@@ -17,9 +17,9 @@ export const Header = () => {
   return (
     <HeaderCustom>
       <HeaderLogo>
-        <Link href="/">
+        <Link spy={true} smooth={true} duration={500} to='home'>
           <ContentLogo>
-            <Image src={Logo} alt="Logo Ienel" />
+            <Image priority style={{width: 'auto', height: 'auto'}} src={Logo} alt="Logo Ienel" />
           </ContentLogo>
         </Link>
       </HeaderLogo>

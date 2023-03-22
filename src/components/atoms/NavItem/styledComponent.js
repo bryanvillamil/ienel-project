@@ -1,8 +1,9 @@
 import styled from 'styled-components'
-import Link from 'next/link'
+import {Link} from 'react-scroll'
 import { breakpoint } from 'styled-components-breakpoint';
 
 export const LinkCustom = styled(Link)`
+  cursor: pointer;
 	width: 100%;
 	display: flex;
   justify-content: space-between;

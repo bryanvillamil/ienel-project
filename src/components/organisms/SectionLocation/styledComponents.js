@@ -6,5 +6,5 @@ export const ContentLocation = styled(Element)`
   	width: 100%;
 	display: flex;
 	background: LightGreen;
-	height: 300px;
+	height: 380px;
 `;

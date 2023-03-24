@@ -1,22 +1,33 @@
 import React from 'react'
 
-import { LinkCustom } from './styledComponent'
+import { LinkCustomHRef, LinkTo } from './styledComponent'
 
 export const NavItem = ({
   href,
+  to,
   text,
   active
 }: {
-  href: string
   text: string
   active: boolean
+  href?: string
+  to?: string
 }) => {
-  
+
   return (
+    to ? (
+      <>
+        <LinkCustomHRef to={to} spy={true} smooth={true} duration={500} offset={-100} className={`${active ? 'active' : ''}`} >
+          {text}
+        </LinkCustomHRef>
+      </>
+    )
+    : href ? (
     <>
-    <LinkCustom to={text} spy={true} smooth={true} duration={500} offset={-100} className={`${active ? 'active' : ''}`} >
-      {text}
-    </LinkCustom>
+      <LinkTo href={href} className={`${active ? 'active' : ''}`} >
+        {text}
+      </LinkTo>
     </>
+    ) : null
   )
 }

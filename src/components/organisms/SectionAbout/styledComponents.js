@@ -10,12 +10,6 @@ export const ContentAbout = styled(Element)`
 	background: navy;
 	height: 550px;
 `
-
-export const SectionRef = styled.section`
-	width: 100%;
-	height: 90%;
-`
-
 export const ContentAboutText = styled.div`
 	width: 70%;
 	margin: auto;
@@ -34,6 +28,6 @@ export const Test = styled.div`
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-	height: 90%;
+	height: 100%;
 	background: green;
 `

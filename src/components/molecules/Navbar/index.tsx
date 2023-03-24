@@ -19,11 +19,11 @@ const MENU_LIST = [
   },
   {
     text: 'about',
-    href: '/about'
+    to: 'about'
   },
   {
     text: 'ubicanos',
-    href: '/ubicanos'
+    to: 'ubicanos'
   },
   {
     text: 'contacto',

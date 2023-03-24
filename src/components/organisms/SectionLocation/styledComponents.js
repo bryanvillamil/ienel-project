@@ -8,3 +8,13 @@ export const ContentLocation = styled(Element)`
 	background: LightGreen;
 	height: 380px;
 `;
+
+export const Test = styled.div`
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	background: green;
+`

@@ -4,6 +4,7 @@ export * from './atoms/NavItem'
 
 // ----- Molecules
 export * from './molecules/Navbar'
+export * from './molecules/Animate'
 
 // ----- Organisms
 export * from './organisms/Header'

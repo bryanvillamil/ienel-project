@@ -8,7 +8,7 @@ export const ContentAbout = styled(Element)`
 	display: flex;
 	flex-direction: column;
 	background: navy;
-	height: 550px;
+	height: 80vh;
 `
 export const ContentAboutText = styled.div`
 	width: 70%;

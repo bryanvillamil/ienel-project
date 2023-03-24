@@ -1,6 +1,5 @@
 import React from 'react'
-
-import { LinkCustomHRef, LinkTo } from './styledComponent'
+import { LinkCustomHRef } from './styledComponent'
 
 export const NavItem = ({
   href,
@@ -11,23 +10,34 @@ export const NavItem = ({
   text: string
   active: boolean
   href?: string
-  to?: string
+  to: string
 }) => {
-
   return (
-    to ? (
-      <>
-        <LinkCustomHRef to={to} spy={true} smooth={true} duration={500} offset={-100} className={`${active ? 'active' : ''}`} >
-          {text}
-        </LinkCustomHRef>
-      </>
-    )
-    : href ? (
-    <>
-      <LinkTo href={href} className={`${active ? 'active' : ''}`} >
-        {text}
-      </LinkTo>
-    </>
-    ) : null
+    <LinkCustomHRef
+      to={to}
+      spy={true}
+      smooth={true}
+      duration={800}
+      offset={-100}
+      className={`${active ? 'active' : ''}`}>
+      {text}
+    </LinkCustomHRef>
   )
+  // return to != null ? (
+  //   <LinkCustomHRef
+  //     to={to}
+  //     spy={true}
+  //     smooth={true}
+  //     duration={500}
+  //     offset={-100}
+  //     className={`${active ? 'active' : ''}`}>
+  //     {text}
+  //   </LinkCustomHRef>
+  // ) : (
+  //   href != null && (
+  //     <LinkTo href={href} className={`${active ? 'active' : ''}`}>
+  //       {text}
+  //     </LinkTo>
+  //   )
+  // )
 }

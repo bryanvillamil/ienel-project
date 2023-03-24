@@ -1,8 +1,14 @@
 import { DefaultLayout } from '@templates/index'
-import { SectionSliderBg, SectionAbout, SectionLocation } from '@components/index'
+import {
+  SectionSliderBg,
+  Services,
+  Projects,
+  About,
+  Location,
+  Contact
+} from '@components/index'
 
 export default function Home() {
-
   // const options = useMemo(() => {
   //   return {
   //     root: null,
@@ -10,16 +16,20 @@ export default function Home() {
   //     threshold: 0.3
   //   }
   // }, [])
-  
 
   return (
     <DefaultLayout title="IENEL - Home">
       <SectionSliderBg />
 
-      <SectionAbout/>
+      <About />
 
-      <SectionLocation />
+      <Services />
 
+      <Projects />
+
+      <Location />
+
+      <Contact />
     </DefaultLayout>
   )
 }

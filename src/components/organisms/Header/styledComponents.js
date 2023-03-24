@@ -7,15 +7,12 @@ export const HeaderCustom = styled.header`
   z-index: 30;
   top: 0;
 	display: flex;
-	/* background: #f1f1f1; */
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-	height: 80px;
 	transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+	height: 80px;
+	background: #fff;
 	${breakpoint('md')`
-		height: 100px;
-	`}
-	${breakpoint('xxl')`
-		height: 110px;
+		height: 80px;
 	`}
 `;
 
@@ -37,6 +34,7 @@ export const HeaderLogo = styled.div`
 		order: 1;
 		padding: 0 0 0 25px;
 		width: 15%;
+		justify-content: flex-start;
 	`}
 `;
 
@@ -49,10 +47,11 @@ export const ContentLogo = styled.h1`
 		object-fit: contain;
 		width: 100%;
 		max-width: 150px;
+		height: 100%;
 	}
 	${breakpoint('md')`
 		img {
-			max-width: 120px;
+			max-width: 100px;
 		}
 	`}
 `;

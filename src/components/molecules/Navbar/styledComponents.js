@@ -44,8 +44,10 @@ export const NavMenuList = styled.div`
   padding: 24px 16px;
   transition: all 0.2s;
   min-height: calc(100vh - 60px);
-  /* background-color: #f1f1f1; */
+  background-color: #fff;
   z-index: 999;
+  box-shadow: 8px 0px 8px -8px rgba(0, 0, 0, 0.5);
+	transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   &.active {
     left: 0;
   }
@@ -57,6 +59,7 @@ export const NavMenuList = styled.div`
     width: fit-content;
     column-gap: 24px;
     align-items: center;
+    box-shadow: none;
 	`}
 `;
 

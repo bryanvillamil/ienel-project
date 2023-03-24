@@ -16,3 +16,5 @@ export default function DefaultLayout({ children, title }: DefaultLayoutProps) {
     </>
   )
 }
+
+// color section : #0C1F07

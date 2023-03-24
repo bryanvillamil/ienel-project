@@ -9,6 +9,21 @@ const montserrat = Montserrat({
 })
 
 const theme = {
+  colors: {
+    /* verde 1: #82AC41; */
+    /* verde 2: #0AC477; */
+    /* verde 3: #0C1F07; */
+    /* verde 4: #84A12F; */
+    /* verde 5: #66BA42; */
+    /* verde 6: #4A5F19; */
+    /* verde 7: #0E73FC; */
+    colorPrimary: '#84A12F',
+    colorSecondary: '#FFFDF9',
+    white: '#fff',
+    dark: '#333'
+  },
+  // fonts: ["sans-serif", "Roboto"],
+  // font-family: ${props => props.theme.fonts[0]};
   breakpoints: {
     xs: 320,
     sm: 568,

@@ -4,6 +4,6 @@ export const ContentAbout = styled.section`
 	position: relative;
   width: 100%;
 	display: flex;
-	background: navy;
+	background: ${props => props.theme.colors.colorPrimary};
 	height: 500px;
 `;

@@ -1,11 +1,11 @@
 import React from 'react'
-import { Animate } from '@components/molecules/Animate'
+import { Animate } from '@components/index'
 import { ContentServices, Test } from './styledComponents'
 import 'animate.css'
 
 export const Services = () => {
   return (
-    <ContentServices name="servicios" id="servicios">
+    <ContentServices name="services" id="services">
       <Animate
         entranceAnimation="animate__backInLeft"
         exitAnimation="animate__backOutLeft">

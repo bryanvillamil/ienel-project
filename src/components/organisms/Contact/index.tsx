@@ -1,5 +1,5 @@
 import React from 'react'
-import { Animate } from '@components/molecules/Animate'
+import { Animate } from '@components/index'
 import { ContentContact, Test } from './styledComponents'
 import 'animate.css'
 

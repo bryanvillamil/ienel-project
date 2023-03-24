@@ -1,12 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
-import { Animate } from '@components/molecules/Animate'
+import { Animate } from '@components/index'
 import { ContentProjects, Test } from './styledComponents'
 import 'animate.css'
 
 export const Projects = () => {
   return (
-    <ContentProjects name="proyectos" id="proyectos">
+    <ContentProjects name="projects" id="projects">
       <Animate
         entranceAnimation="animate__backInLeft"
         exitAnimation="animate__backOutLeft">

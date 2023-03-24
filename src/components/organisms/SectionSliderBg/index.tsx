@@ -47,10 +47,18 @@ const BG_LIST = [
   }
 ]
 
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1
+}
+
 export const SectionSliderBg = () => {
   return (
     <SectionSlider name="home">
-      <Carousel>
+      <Carousel settings={settings}>
         {BG_LIST.map((img) => {
           return (
             <div key={img.id}>

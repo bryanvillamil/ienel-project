@@ -1,10 +1,10 @@
 import React from 'react'
-import { Animate } from '@components/molecules/Animate'
+import { Animate } from '@components/index'
 import { ContentLocation, Test } from './styledComponents'
 
 export const Location = () => {
   return (
-    <ContentLocation name="ubicanos" id="location">
+    <ContentLocation name="location" id="location">
       <Animate
         entranceAnimation="animate__backInDown"
         exitAnimation="animate__backOutDown">

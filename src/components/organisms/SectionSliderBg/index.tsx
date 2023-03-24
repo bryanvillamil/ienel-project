@@ -49,7 +49,7 @@ const BG_LIST = [
 
 export const SectionSliderBg = () => {
   return (
-    <SectionSlider>
+    <SectionSlider name="home">
       <Carousel>
         {BG_LIST.map((img) => {
           return (

@@ -1,9 +1,10 @@
 import styled from 'styled-components'
+import { Element } from 'react-scroll';
 import { breakpoint } from 'styled-components-breakpoint'
 
-export const SectionSlider = styled.section`
+export const SectionSlider = styled(Element)`
 	position: relative;
-  width: 100%;
+  	width: 100%;
 	display: flex;
 	overflow: hidden;
 	height: 91vh;
@@ -12,8 +13,6 @@ export const SectionSlider = styled.section`
     position: absolute;
     inset: 0;
 		background: rgb(0,0,0);
-		/* background: linear-gradient(0deg,rgba(0,0,0,.8) 0%,rgba(0,0,0,.6) 16%,rgba(140,136,136,0.1) 100%);
-		background: linear-gradient(0deg,rgba(0,0,0,1) 0%,rgba(0,0,0,.2) 40%,rgba(140,136,136,0) 100%); */
 		background: linear-gradient(0deg,rgba(0,0,0,1) 0%,rgba(0,0,0,.2) 40%,rgba(140,136,136,0) 50%);
 		background: linear-gradient(0deg,rgba(140,136,136,0) 100%,rgba(0,0,0,.2) 40%,rgba(0,0,0,1) 0%);
 	}

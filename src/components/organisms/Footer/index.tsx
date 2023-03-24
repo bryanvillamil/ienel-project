@@ -1,3 +1,9 @@
+import { FooterCustom } from './styledComponents'
+
 export const Footer = () => {
-  return <h2>Component Footer</h2>;
-};
+  return (
+    <FooterCustom>
+      <h2>Component Footer</h2>
+    </FooterCustom>
+  )
+}

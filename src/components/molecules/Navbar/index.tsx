@@ -10,24 +10,24 @@ export interface INavbar {
 
 const MENU_LIST = [
   {
+    text: 'about',
+    to: 'about'
+  },
+  {
     text: 'servicios',
-    href: '/servicios'
+    to: 'servicios'
   },
   {
     text: 'proyectos',
-    href: '/proyectos'
-  },
-  {
-    text: 'about',
-    href: '/about'
+    to: 'proyectos'
   },
   {
     text: 'ubicanos',
-    href: '/ubicanos'
+    to: 'ubicanos'
   },
   {
     text: 'contacto',
-    href: '/contacto'
+    to: 'contacto'
   }
 ]
 

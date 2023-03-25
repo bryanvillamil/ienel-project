@@ -2,11 +2,14 @@
 export * from './atoms/Seo'
 export * from './atoms/NavItem'
 export * from './atoms/ContainCenter'
+export * from './atoms/Loading'
+export * from './atoms/LoadingInitialSite'
 
 // ----- Molecules
 export * from './molecules/Navbar'
 export * from './molecules/Animate'
 export * from './molecules/Carousel'
+export * from './molecules/Map'
 
 // ----- Organisms
 export * from './organisms/Header'

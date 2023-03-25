@@ -7,8 +7,8 @@ export const Services = () => {
   return (
     <ContentServices name="services" id="services">
       <Animate
-        entranceAnimation="animate__backInLeft"
-        exitAnimation="animate__backOutLeft">
+        entranceAnimation="animate__backInRight"
+        exitAnimation="animate__backOutRight">
         <Test>
           <h2>Services</h2>
           <p>

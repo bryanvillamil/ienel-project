@@ -7,4 +7,6 @@ body {
   padding: 0;
   @include fonts.montserrat-bold(layout.rem(16px));
   color: colors.$text-main;
+  width: 100%;
+  overflow-x: hidden;
 }

@@ -7,7 +7,7 @@ export const ContentServices = styled(Element)`
   	width: 100%;
 	display: flex;
 	flex-direction: column;
-	background: white;
+	background: ${props => props.theme.colors.colorPrimary};
 	height: 80vh;
 `
 export const ContentServicesText = styled.div`

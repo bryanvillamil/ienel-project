@@ -8,8 +8,8 @@ export const ContentSlider = styled.div`
     &-prev,
     &-next {
       z-index: 9;
-      height: 35px;
-      width: 35px;
+      height: 40px;
+      width: 40px;
       top: 40%;
       &:before {
         font-size: 35px;
@@ -35,5 +35,24 @@ export const ContentSlider = styled.div`
         }
       }
     }
+  }
+`;
+
+export const CustomArrow = styled.svg`
+  font-size: 35px;
+  position: absolute;
+  top: 40%;
+  line-height: 0;
+  padding: 0;
+  transform: scale(1);
+  transition: 0.3s all linear;
+  cursor: pointer;
+  color: #fff;
+  svg {
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0, 1));
+  }
+  &:hover {
+    transform: scale(1.1);
+    color: #fff;
   }
 `;

@@ -7,9 +7,10 @@ export const ContentAbout = styled(Element)`
   	width: 100%;
 	display: flex;
 	flex-direction: column;
-	background: navy;
+	background: ${props => props.theme.colors.white};
 	height: 80vh;
-`
+`;
+
 export const ContentAboutText = styled.div`
 	width: 70%;
 	margin: auto;
@@ -30,4 +31,4 @@ export const Test = styled.div`
 	align-items: center;
 	height: 100%;
 	background: green;
-`
+`;

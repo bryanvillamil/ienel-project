@@ -14,7 +14,7 @@ export const SectionSlider = styled(Element)`
     inset: 0;
 		background: rgb(0,0,0);
 		background: linear-gradient(0deg,rgba(0,0,0,1) 0%,rgba(0,0,0,.2) 40%,rgba(140,136,136,0) 50%);
-		background: linear-gradient(0deg,rgba(140,136,136,0) 100%,rgba(0,0,0,.2) 40%,rgba(0,0,0,1) 0%);
+		background: linear-gradient(0deg,rgba(0,0,0,1) 0%,rgba(0,0,0,.2) 50%,rgba(140,136,136,0) 60%);
 	}
 `;
 
@@ -23,8 +23,8 @@ export const ContentSvgs = styled.div`
 `;
 
 export const SvgSmall = styled.svg`
-  fill: ${props => props.theme.colors.colorPrimary} !important;
-  stroke: ${props => props.theme.colors.colorPrimary};
+  fill: ${props => props.theme.colors.white} !important;
+  stroke: ${props => props.theme.colors.white};
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -45,8 +45,8 @@ export const SvgSmall = styled.svg`
 `;
 
 export const SvgBig = styled.svg`
-  fill: ${props => props.theme.colors.colorPrimary} !important;
-  stroke: ${props => props.theme.colors.colorPrimary};
+  fill: ${props => props.theme.colors.white} !important;
+  stroke: ${props => props.theme.colors.white};
   position: absolute;
   bottom: -2px;
   right: 0;

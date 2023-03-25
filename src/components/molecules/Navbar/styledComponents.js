@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { breakpoint } from 'styled-components-breakpoint';
 
-
 export const Menu = styled.nav`
 	width: 100%;
 	display: flex;

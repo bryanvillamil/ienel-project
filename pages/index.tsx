@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react'
 import { DefaultLayout } from '@templates/index'
 import {
+  LoadingInitialSite,
   SectionSliderBg,
   Services,
   Projects,
@@ -9,13 +11,20 @@ import {
 } from '@components/index'
 
 export default function Home() {
-  // const options = useMemo(() => {
-  //   return {
-  //     root: null,
-  //     rootMargin: '0px',
-  //     threshold: 0.3
-  //   }
-  // }, [])
+  const [isLoadingHome, setIsLoadingHome] = useState(true)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    const timeoutId = setTimeout(() => {
+      setIsLoadingHome(false)
+    }, 1500)
+
+    return () => clearTimeout(timeoutId)
+  }, [])
+
+  if (isLoadingHome) {
+    return <LoadingInitialSite />
+  }
 
   return (
     <DefaultLayout title="IENEL - Home">

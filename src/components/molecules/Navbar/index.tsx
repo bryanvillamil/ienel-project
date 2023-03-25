@@ -10,7 +10,7 @@ export interface INavbar {
 
 const MENU_LIST = [
   {
-    text: 'nosotros',
+    text: 'sobre nosotros',
     to: 'about'
   },
   {
@@ -22,7 +22,7 @@ const MENU_LIST = [
     to: 'projects'
   },
   {
-    text: 'ubicanos',
+    text: 'cómo llegar',
     to: 'location'
   },
   {

@@ -1,23 +1,11 @@
 import React from 'react'
-import { Animate } from '@components/index'
-import { ContentLocation, Test } from './styledComponents'
+import { Map } from '@components/index'
+import { ContentLocation } from './styledComponents'
 
 export const Location = () => {
   return (
     <ContentLocation name="location" id="location">
-      <Animate
-        entranceAnimation="animate__backInDown"
-        exitAnimation="animate__backOutDown">
-        <Test>
-          <h2>Testando div de prueba para animacion</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima aut
-            animi rerum architecto veritatis voluptatem nobis necessitatibus
-            maxime, accusantium similique, sint porro cumque quas modi officiis
-            ullam nesciunt id quibusdam?
-          </p>
-        </Test>
-      </Animate>
+      <Map apiKey="AIzaSyAI4gBlWIr104WCq4gqiFT6T-XVssOdIjU" />
     </ContentLocation>
   )
 }

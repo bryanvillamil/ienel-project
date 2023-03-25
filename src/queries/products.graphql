@@ -1,0 +1,11 @@
+query GetAllProyects {
+  seccionProyectos(id: "71LELuVE5LNqkZOIggjYS8") {
+    titulo
+    metaDescripcion
+    tituloPrincipal
+    slug
+    proyectosCollection {
+      total
+    }
+  }
+}

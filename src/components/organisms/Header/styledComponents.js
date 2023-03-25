@@ -19,13 +19,13 @@ export const HeaderCustom = styled.header`
 
 export const HeaderLogo = styled.div`
 	cursor: pointer;
-  	display: flex;
+  display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 80px;
 	height: 100%;
-	max-width: 180px;
-  	padding: 0 25px 0 0;
+	max-width: 140px;
+  padding: 0 25px 0 0;
 	order: 2;
 	transition: all 0.5s ease;
 	a {
@@ -36,6 +36,7 @@ export const HeaderLogo = styled.div`
 		padding: 0 0 0 25px;
 		width: 15%;
 		justify-content: flex-start;
+		max-width: 180px;
 	`}
 `;
 
@@ -47,7 +48,7 @@ export const ContentLogo = styled.h1`
 		display: flex;
 		object-fit: contain;
 		width: 100%;
-		max-width: 150px;
+		max-width: 100px;
 		height: 100%;
 	}
 	${breakpoint('md')`

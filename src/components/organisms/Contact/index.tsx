@@ -5,10 +5,10 @@ import 'animate.css'
 
 export const Contact = () => {
   return (
-    <ContentContact name="contacto" id="contacto">
+    <ContentContact name="contact" id="contact">
       <Animate
-        entranceAnimation="animate__backInLeft"
-        exitAnimation="animate__backOutLeft">
+        entranceAnimation="animate__backInUp"
+        exitAnimation="animate__backOutDown">
         <Test>
           <h2>Contacto</h2>
           <p>

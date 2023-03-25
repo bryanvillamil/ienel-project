@@ -12,8 +12,9 @@ export const LinkCustomHRef = styled(LinkHRef)`
   font-size: 18px; 
   position: relative;
   transition: all 0.5s;
-  color: #333;
+  color: ${props => props.theme.colors.colorPrimary};
   text-decoration: none;
+  text-transform: capitalize;
   &:hover {
     font-weight: bold;
   }
@@ -48,6 +49,7 @@ export const LinkTo = styled(Link)`
   transition: all 0.5s;
   color: #333;
   text-decoration: none;
+  text-transform: capitalize;
   &:hover {
     font-weight: bold;
   }

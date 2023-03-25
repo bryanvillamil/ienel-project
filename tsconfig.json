@@ -21,6 +21,9 @@
       "@images/*": ["src/assets/img/*"],
       "@hooks/*": ["src/hooks/*"],
       "@services/*": ["src/services/*"],
+      "@generated/*": ["src/generated/*"],
+      "@styles/*": ["styles/*"],
+      "@graphql/*": ["graphql/*"],
       "@templates/*": ["templates/*"],
       "@pages/*": ["pages/*"],
       "@lib/*": ["lib/*"],
@@ -29,6 +32,6 @@
       "~styles/*": ["styles/*"]
     }
   },
-  "include": ["@types/index.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["@types/index.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".env.local.d.ts"],
   "exclude": ["node_modules"]
 }

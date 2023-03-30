@@ -4,12 +4,15 @@ import 'animate.css';
 
 export const ContentServices = styled(Element)`
 	position: relative;
-  	width: 100%;
+  width: 100%;
 	display: flex;
 	flex-direction: column;
-	background: ${props => props.theme.colors.colorPrimary};
-	height: 80vh;
-`
+	justify-content: center;
+	align-items: center;
+	height: 60vh;
+	background: #fff;
+`;
+
 export const ContentServicesText = styled.div`
 	width: 70%;
 	margin: auto;
@@ -20,14 +23,21 @@ export const ContentServicesText = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
+	z-index: 9;
 `;
 
-export const Test = styled.div`
-	width: 50%;
+export const InfoServices = styled.div`
+	width: 75%;
+	height: 80%;
+	max-width: 800px;
+	max-height: 600px;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-	height: 100%;
-	background: green;
-`
+	margin: auto;
+	background: #fff;
+	color: #000;
+`;
+

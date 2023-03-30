@@ -7,7 +7,7 @@ export const ContentContact = styled(Element)`
   	width: 100%;
 	display: flex;
 	flex-direction: column;
-	background: green;
+	background: #fff;
 	height: 80vh;
 `
 export const ContentContactText = styled.div`
@@ -22,12 +22,14 @@ export const ContentContactText = styled.div`
 	align-items: center;
 `;
 
-export const Test = styled.div`
-	width: 50%;
+export const BoxContact = styled.div`
+	width: 70%;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
 	height: 100%;
-	background: green;
+	background: navy;
+	color: #000;
+	margin: auto;
 `

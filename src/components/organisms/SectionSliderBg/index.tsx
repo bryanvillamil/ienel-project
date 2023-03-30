@@ -9,6 +9,8 @@ import Solar6 from '@images/bg/solar-6.jpg'
 import { Carousel } from '@components/index'
 import {
   SectionSlider,
+  ContentSlide,
+  InfoCarousel,
   ContentSvgs,
   SvgSmall,
   SvgBig
@@ -58,16 +60,24 @@ const settings = {
 export const SectionSliderBg = () => {
   return (
     <SectionSlider name="home">
+      <InfoCarousel>
+        <h2>Proveemos el mejor servicio electrico para ti</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum deserunt
+          tenetur accusantium aut eius velit, odio molestias. Dolores, impedit
+          quae amet inventore pariatur sint!
+        </p>
+      </InfoCarousel>
       <Carousel settings={settings}>
         {BG_LIST.map((img) => {
           return (
-            <div key={img.id}>
+            <ContentSlide key={img.id}>
               <Image
                 src={img.url}
                 alt={img.name}
                 style={{ objectFit: 'cover' }}
               />
-            </div>
+            </ContentSlide>
           )
         })}
       </Carousel>

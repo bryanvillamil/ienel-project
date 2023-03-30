@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const FooterCustom = styled.footer`
 	position: relative;
   display: flex;
-  height: 400px;
+  height: 250px;
 	width: 100%;
-  background: #f1f1f1;
+  background: ${props => props.theme.colors.colorPrimary};
 `;

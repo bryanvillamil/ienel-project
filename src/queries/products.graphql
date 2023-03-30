@@ -1,11 +1,25 @@
 query GetAllProyects {
-  seccionProyectos(id: "71LELuVE5LNqkZOIggjYS8") {
-    titulo
-    metaDescripcion
-    tituloPrincipal
-    slug
+  home(id: "3koGax7i3OW9oMqDO6iml8") {
+    informacionProyectos {
+      json
+    }
     proyectosCollection {
-      total
+      items {
+        ... on SeccionProyectosInternaDeProyectos {
+          nombreDelProyecto
+          slug
+          imagenDelProyectoCollection {
+            items {
+              url
+              title
+              description
+            }
+          }
+          descripcionDelProyecto {
+            json
+          }
+        }
+      }
     }
   }
 }

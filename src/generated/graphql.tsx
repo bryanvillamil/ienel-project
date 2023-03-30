@@ -1361,18 +1361,32 @@ export type TransversalRedesSocialesCollection = {
 export type GetAllProyectsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllProyectsQuery = { __typename?: 'Query', seccionProyectos?: { __typename?: 'SeccionProyectos', titulo?: string | null, metaDescripcion?: string | null, tituloPrincipal?: string | null, slug?: string | null, proyectosCollection?: { __typename?: 'SeccionProyectosProyectosCollection', total: number } | null } | null };
+export type GetAllProyectsQuery = { __typename?: 'Query', home?: { __typename?: 'Home', informacionProyectos?: { __typename?: 'HomeInformacionProyectos', json: any } | null, proyectosCollection?: { __typename?: 'HomeProyectosCollection', items: Array<{ __typename?: 'ContenidosTransversales' } | { __typename?: 'Home' } | { __typename?: 'SeccionProyectos' } | { __typename?: 'SeccionProyectosInternaDeProyectos', nombreDelProyecto?: string | null, slug?: string | null, imagenDelProyectoCollection?: { __typename?: 'AssetCollection', items: Array<{ __typename?: 'Asset', url?: string | null, title?: string | null, description?: string | null } | null> } | null, descripcionDelProyecto?: { __typename?: 'SeccionProyectosInternaDeProyectosDescripcionDelProyecto', json: any } | null } | { __typename?: 'Transversal' } | null> } | null } | null };
 
 
 export const GetAllProyectsDocument = gql`
     query GetAllProyects {
-  seccionProyectos(id: "71LELuVE5LNqkZOIggjYS8") {
-    titulo
-    metaDescripcion
-    tituloPrincipal
-    slug
+  home(id: "3koGax7i3OW9oMqDO6iml8") {
+    informacionProyectos {
+      json
+    }
     proyectosCollection {
-      total
+      items {
+        ... on SeccionProyectosInternaDeProyectos {
+          nombreDelProyecto
+          slug
+          imagenDelProyectoCollection {
+            items {
+              url
+              title
+              description
+            }
+          }
+          descripcionDelProyecto {
+            json
+          }
+        }
+      }
     }
   }
 }

@@ -7,7 +7,7 @@ export const ContentProjects = styled(Element)`
   	width: 100%;
 	display: flex;
 	flex-direction: column;
-	background: yellow;
+	background: ${props => props.theme.colors.colorPrimary};
 	height: 80vh;
 `
 export const ContentProjectsText = styled.div`
@@ -22,7 +22,7 @@ export const ContentProjectsText = styled.div`
 	align-items: center;
 `;
 
-export const Test = styled.div`
+export const BoxProyects = styled.div`
 	width: 50%;
 	display: flex;
 	justify-content: center;
@@ -30,4 +30,5 @@ export const Test = styled.div`
 	align-items: center;
 	height: 100%;
 	background: green;
+	margin: auto;
 `

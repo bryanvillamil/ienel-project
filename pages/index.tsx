@@ -14,7 +14,6 @@ export default function Home() {
   const [isLoadingHome, setIsLoadingHome] = useState(true)
 
   useEffect(() => {
-    window.scrollTo(0, 0)
     const timeoutId = setTimeout(() => {
       setIsLoadingHome(false)
     }, 1500)
@@ -30,9 +29,9 @@ export default function Home() {
     <DefaultLayout title="IENEL - Home">
       <SectionSliderBg />
 
-      <About />
-
       <Services />
+
+      <About />
 
       <Projects />
 

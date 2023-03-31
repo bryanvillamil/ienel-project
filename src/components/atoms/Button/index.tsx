@@ -1,5 +1,5 @@
 import React from 'react'
-import { CustomButton } from './styledCOmponents'
+import { CustomButton } from './styledComponents'
 
 interface IPropsButton {
   onClick: () => void

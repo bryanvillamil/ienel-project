@@ -10,7 +10,7 @@ export const ContentServices = styled(Element)`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 85vh;
+	height: 80vh;
 	background: #fff;
 	${breakpoint('md')`
     height: 60vh;

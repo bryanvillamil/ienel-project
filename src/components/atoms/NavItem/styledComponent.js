@@ -7,34 +7,57 @@ export const LinkCustomHRef = styled(LinkHRef)`
   cursor: pointer;
 	width: 100%;
 	display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  font-size: 18px; 
+  font-size: 20px; 
   position: relative;
   transition: all 0.5s;
   color: ${props => props.theme.colors.colorPrimary};
   text-decoration: none;
   text-transform: capitalize;
-  &:hover {
+  padding: 15px 0;
+  &:hover,
+  &.active {
     font-weight: bold;
+    color: #fff;
+  }
+
+  &.active:before,
+  &:hover:before {
+    width: 100%;
+  }
+
+  &:before { 
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    bottom: 0px;
+    left: 0;
+    background-color: ${props => props.theme.colors.colorPrimary};
+    transition: all 0.5s;
+    z-index: -1;
   }
 
   ${breakpoint('md')`
+    font-size: 15px; 
+    justify-content: space-between;
+    padding: 0;
+    &:hover,
+    &.active {
+      color: ${props => props.theme.colors.colorPrimary};
+    }
 		&:before { 
-      content: '';
-      position: absolute;
-      width: 0%;
       height: 4px;
       bottom: -12px;
       left: 0;
       background-color: #333;
       transition: all 0.5s;
     }
+	`}
 
-    &.active:before,
-    &:hover:before {
-      width: 100%;
-    }
+  ${breakpoint('lg')`
+    font-size: 18px; 
 	`}
 `;
 

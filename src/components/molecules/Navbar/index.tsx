@@ -37,10 +37,12 @@ export const Navbar: React.FC<INavbar> = ({ navActive, setNavActive }) => {
 
   return (
     <Menu>
-      <NavMenuBar onClick={() => setNavActive(!navActive)}>
-        <div></div>
-        <div></div>
-        <div></div>
+      <NavMenuBar
+        onClick={() => setNavActive(!navActive)}
+        className={navActive ? 'active' : ''}>
+        <div />
+        <div />
+        <div />
       </NavMenuBar>
 
       <NavMenuList className={navActive ? 'active' : ''}>
@@ -51,6 +53,7 @@ export const Navbar: React.FC<INavbar> = ({ navActive, setNavActive }) => {
             <div key={idx} onClick={() => setActiveIdx(idx)}>
               <NavItem
                 active={activeIdx === idx || pathUrl === menu.text}
+                setNavActive={setNavActive}
                 {...menu}
               />
             </div>

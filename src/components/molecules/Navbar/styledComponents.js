@@ -7,7 +7,6 @@ export const Menu = styled.nav`
   justify-content: flex-start;
   align-items: center;
   padding: 18px;
-  /* background-color: #f1f1f1; */
   ${breakpoint('md')`
 		justify-content: flex-end;
     padding: 0 18px;
@@ -25,6 +24,19 @@ export const NavMenuBar = styled.div`
     height: 4px;
     background-color: black;
     border-radius: 2px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 6px;
+    &:first-child {
+      transform: ${({ className }) => className === 'active' ? 'rotate(45deg)' : 'rotate(0)'};
+    }
+    &:last-child {
+      transform: ${({ className }) => className === 'active' ? 'rotate(-45deg)' : 'rotate(0)'}
+    }
+    &:nth-child(2) {
+      opacity: ${({ className }) => className === 'active' ? '0' : '1'};
+      transform: ${({ className }) => className === 'active' ? 'translateX(20px)' : 'translateX(0)'};
+    }
   }
 
   ${breakpoint('md')`
@@ -38,9 +50,8 @@ export const NavMenuList = styled.div`
   position: fixed;
   top: 80px;
   width: 220px;
-  row-gap: 24px;
   left: -330px;
-  padding: 24px 16px;
+  padding: 0;
   transition: all 0.2s;
   min-height: calc(100vh - 60px);
   background-color: #fff;
@@ -50,8 +61,16 @@ export const NavMenuList = styled.div`
   &.active {
     left: 0;
   }
+  div {
+    border-bottom: 1px solid #333;
+    &:first-child {
+      border-top: 1px solid #333;
+    }
+  }
 
   ${breakpoint('md')`
+    row-gap: 24px;
+    padding: 24px 16px;
 		position: unset;
     flex-direction: row;
     min-height: fit-content;
@@ -59,6 +78,12 @@ export const NavMenuList = styled.div`
     column-gap: 24px;
     align-items: center;
     box-shadow: none;
+    div {
+      border: none;
+      &:first-child {
+        border: none;
+      }
+    }
 	`}
 `;
 

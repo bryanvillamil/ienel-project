@@ -15,7 +15,7 @@ export const LinkCustomHRef = styled(LinkHRef)`
   color: ${props => props.theme.colors.colorPrimary};
   text-decoration: none;
   text-transform: capitalize;
-  padding: 15px 0;
+  padding: 20px 0;
   &:hover,
   &.active {
     font-weight: bold;

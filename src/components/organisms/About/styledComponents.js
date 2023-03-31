@@ -8,7 +8,7 @@ export const ContentAbout = styled(Element)`
   width: 100%;
 	display: flex;
 	flex-direction: column;
-	height: 85vh;
+	height: 70vh;
 	${breakpoint('md')`
     height: 80vh;
 	`}
@@ -17,7 +17,7 @@ export const ContentAbout = styled(Element)`
 export const BgFixedAbout = styled.div`
 	width: 100%;
 	height: 100%;
-	background-size: cover;
+	background-size: contain;
 	background-attachment: fixed;
 	position: absolute;
 	inset: 0;
@@ -33,6 +33,9 @@ export const BgFixedAbout = styled.div`
 		display: flex;
 		opacity: 0.8;
 	}
+	${breakpoint('md')`
+    background-size: cover;
+	`}
 `;
 
 export const ContentAboutText = styled.div`

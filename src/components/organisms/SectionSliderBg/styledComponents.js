@@ -7,7 +7,7 @@ export const SectionSlider = styled(Element)`
   width: 100%;
 	display: flex;
 	overflow: hidden;
-	height: 85vh;
+	height: 82vh;
 	&:after {
 		content: '';
     position: absolute;

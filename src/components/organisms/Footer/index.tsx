@@ -1,3 +1,12 @@
+import { ContainCenter } from '@components/index'
+import { FooterCustom } from './styledComponents'
+
 export const Footer = () => {
-  return <h2>Component Footer</h2>;
-};
+  return (
+    <FooterCustom>
+      <ContainCenter>
+        <h2>Component Footer</h2>
+      </ContainCenter>
+    </FooterCustom>
+  )
+}

@@ -1,23 +1,15 @@
-import "~styles/globals.scss";
-import type { AppProps } from "next/app";
-import { ThemeProvider } from "styled-components";
-import { Montserrat } from "@next/font/google";
+import type { AppProps } from 'next/app'
+import { ApolloProvider } from '@apollo/client'
+import client from '@graphql/client'
+import { theme } from '@styles/theme'
+import { ThemeProvider } from 'styled-components'
+import { Montserrat } from '@next/font/google'
+import '~styles/globals.scss'
 
 const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-});
-
-const theme = {
-  breakpoints: {
-    xs: 320,
-    sm: 568,
-    md: 768,
-    lg: 1024,
-    xl: 1200,
-    xxl: 1500,
-  },
-};
+  variable: '--font-montserrat',
+  subsets: ['latin']
+})
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -27,9 +19,12 @@ export default function App({ Component, pageProps }: AppProps) {
           --font-montserrat: ${montserrat.style.fontFamily};
         }
       `}</style>
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+
+      <ApolloProvider client={client}>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </ApolloProvider>
     </>
-  );
+  )
 }

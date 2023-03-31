@@ -7,7 +7,7 @@ export const SectionSlider = styled(Element)`
   width: 100%;
 	display: flex;
 	overflow: hidden;
-	height: 91vh;
+	height: 85vh;
 	&:after {
 		content: '';
     position: absolute;
@@ -16,6 +16,9 @@ export const SectionSlider = styled(Element)`
 		background: linear-gradient(0deg,rgba(0,0,0,1) 0%,rgba(0,0,0,.2) 40%,rgba(140,136,136,0) 50%);
 		background: linear-gradient(0deg,rgba(0,0,0,1) 0%,rgba(0,0,0,.2) 50%,rgba(140,136,136,0) 60%);
 	}
+  ${breakpoint('md')`
+    height: 91vh;
+  `}
 `;
 
 export const ContentSlide = styled.div`
@@ -40,7 +43,7 @@ export const InfoCarousel = styled.div`
   height: 85%;
   z-index: 1;
   h2 {
-    font-size: 35px;
+    font-size: 40px;
     letter-spacing: 0.5px;
     margin: 0;
     text-shadow: 3px 3px 3px #000;

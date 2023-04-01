@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import { useElementOnViewport } from "@hooks/useElementOnViewport"
-import { SectionRef } from "./styledComponents"
+import { SectionRef, Content } from "./styledComponents"
 
 
 export const Animate = ({ children, entranceAnimation, exitAnimation }) => {
@@ -19,9 +19,9 @@ export const Animate = ({ children, entranceAnimation, exitAnimation }) => {
     return (
         <>
       <SectionRef ref={targetRef}>
-        <div className={classList()}>
+        <Content className={classList()}>
           { children }
-        </div>
+        </Content>
       </SectionRef>
         </>
     )

@@ -4,12 +4,14 @@ export * from './atoms/NavItem'
 export * from './atoms/ContainCenter'
 export * from './atoms/Loading'
 export * from './atoms/LoadingInitialSite'
+export * from './atoms/Title'
 
 // ----- Molecules
 export * from './molecules/Navbar'
 export * from './molecules/Animate'
 export * from './molecules/Carousel'
 export * from './molecules/Map'
+export * from './molecules/CardProject'
 
 // ----- Organisms
 export * from './organisms/Header'

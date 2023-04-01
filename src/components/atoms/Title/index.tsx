@@ -5,16 +5,17 @@ interface IPropsTitle {
   type: number
   text: string
   color: string
-  align: string
+  align: 'start' | 'end' | 'left' | 'right' | 'center' | 'justify' | 'match-parent'
 }
 
-export const Title = ({ type, text, color }: IPropsTitle) => {
+export const Title = ({ type, text, color, align }: IPropsTitle) => {
   switch (type) {
     case 2:
       return (
         <H2
           style={{
-            color: `${color}`
+            color: `${color}`,
+            textAlign: `${align}`
           }}>
           {text}
         </H2>
@@ -23,7 +24,8 @@ export const Title = ({ type, text, color }: IPropsTitle) => {
       return (
         <H3
           style={{
-            color: `${color}`
+            color: `${color}`,
+            textAlign: `${align}`
           }}>
           {text}
         </H3>
@@ -32,7 +34,8 @@ export const Title = ({ type, text, color }: IPropsTitle) => {
       return (
         <H4
           style={{
-            color: `${color}`
+            color: `${color}`,
+            textAlign: `${align}`
           }}>
           {text}
         </H4>
@@ -41,7 +44,8 @@ export const Title = ({ type, text, color }: IPropsTitle) => {
       return (
         <H5
           style={{
-            color: `${color}`
+            color: `${color}`,
+            textAlign: `${align}`
           }}>
           {text}
         </H5>
@@ -50,7 +54,8 @@ export const Title = ({ type, text, color }: IPropsTitle) => {
       return (
         <H6
           style={{
-            color: `${color}`
+            color: `${color}`,
+            textAlign: `${align}`
           }}>
           {text}
         </H6>
@@ -59,7 +64,8 @@ export const Title = ({ type, text, color }: IPropsTitle) => {
       return (
         <H1
           style={{
-            color: `${color}`
+            color: `${color}`,
+            textAlign: `${align}`
           }}>
           {text}
         </H1>

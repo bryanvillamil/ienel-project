@@ -21,14 +21,3 @@ export const ContentProjectsText = styled.div`
 	justify-content: center;
 	align-items: center;
 `;
-
-export const BoxProyects = styled.div`
-	width: 50%;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	align-items: center;
-	height: 100%;
-	background: green;
-	margin: auto;
-`

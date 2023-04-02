@@ -13,7 +13,7 @@ export const ContentServices = styled(Element)`
 	height: 80vh;
 	background: #fff;
 	${breakpoint('md')`
-    height: 60vh;
+    	height: 60vh;
 	`}
 `;
 

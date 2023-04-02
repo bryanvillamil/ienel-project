@@ -26,21 +26,4 @@ export const NavItem = ({
       {text}
     </LinkCustomHRef>
   )
-  // return to != null ? (
-  //   <LinkCustomHRef
-  //     to={to}
-  //     spy={true}
-  //     smooth={true}
-  //     duration={500}
-  //     offset={-100}
-  //     className={`${active ? 'active' : ''}`}>
-  //     {text}
-  //   </LinkCustomHRef>
-  // ) : (
-  //   href != null && (
-  //     <LinkTo href={href} className={`${active ? 'active' : ''}`}>
-  //       {text}
-  //     </LinkTo>
-  //   )
-  // )
 }

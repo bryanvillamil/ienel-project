@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-// import Swal from 'sweetalert2'
+import Swal from 'sweetalert2'
 // import emailjs from '@emailjs/browser'
 import { Animate, ContainCenter, Title } from '@components/index'
 import {
@@ -19,12 +19,18 @@ export const Contact = () => {
   const {
     register,
     handleSubmit,
-    // reset,
+    reset,
     formState: { errors }
   } = useForm()
 
   const sendEmail = (formData: any) => {
     console.log(formData)
+    Swal.fire(
+      '¡Gracias!',
+      'Tu mensaje ha sido enviado correctamente.',
+      'success'
+    )
+    reset()
 
     // emailjs
     //     .send(

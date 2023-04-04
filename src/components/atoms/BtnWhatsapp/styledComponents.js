@@ -7,7 +7,7 @@ export const ContainerLinkWp = styled.a`
   right: 3%;
   z-index: 999;
   background: #00bb2d;
-  width: 50px;
+  width: 55px;
   height: 55px;
   display: flex;
   justify-content: center;

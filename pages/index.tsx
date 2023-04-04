@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { DefaultLayout } from '@templates/index'
 import {
+  BtnWhatsapp,
   LoadingInitialSite,
   SectionSliderBg,
   Services,
@@ -39,6 +40,8 @@ export default function Home() {
       <Location />
 
       <Contact />
+
+      <BtnWhatsapp />
     </DefaultLayout>
   )
 }

@@ -7,7 +7,11 @@ export const ContainerLinkWp = styled.a`
   right: 3%;
   z-index: 999;
   background: #00bb2d;
-  padding: 12px;
+  width: 50px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   transition: opacity 0.3s ease-in-out;
   svg {
@@ -16,6 +20,9 @@ export const ContainerLinkWp = styled.a`
   ${breakpoint('md')`
     right: 2%;
     opacity: .7;
+    padding: 12px;
+    width: initial;
+    height: initial;
     &:hover {
       opacity: 1;
     }

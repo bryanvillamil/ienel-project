@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { breakpoint } from 'styled-components-breakpoint';
+import { breakpoint } from 'styled-components-breakpoint'
 
 /*
   // const rotate = keyframes`
@@ -20,13 +20,13 @@ export const LoadingIcon = styled.div`
 `
 
 export const ContentLoadingInitialSite = styled.div`
-  background: ${props => props.theme.colors.colorBgLoading};
+  background: ${(props) => props.theme.colors.colorBgLoading};
   position: absolute;
   inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-`;
+`
 
 export const BoxLoading = styled.div`
   height: 180px;
@@ -35,7 +35,7 @@ export const BoxLoading = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`;
+`
 
 export const ContentLogo = styled.div`
   height: auto;
@@ -48,4 +48,4 @@ export const ContentLogo = styled.div`
   border-radius: 4px;
   margin-bottom: 25px;
   filter: drop-shadow(5px 4px 4px #333);
-`;
+`

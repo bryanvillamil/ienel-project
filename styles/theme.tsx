@@ -25,6 +25,6 @@ export const theme = {
     xxl: 1500
   },
   borderRadius: {
-    card: '0.5rem', 
+    card: '0.5rem'
   }
 }

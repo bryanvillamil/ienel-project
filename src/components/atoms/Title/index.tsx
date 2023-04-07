@@ -5,7 +5,18 @@ interface IPropsTitle {
   type: number
   text: string
   color: string
-  align: 'start' | 'end' | 'left' | 'right' | 'center' | 'justify' | 'match-parent'
+  marginX?: number
+  marginY?: number
+  paddingX?: number
+  paddingY?: number
+  align:
+    | 'start'
+    | 'end'
+    | 'left'
+    | 'right'
+    | 'center'
+    | 'justify'
+    | 'match-parent'
 }
 
 export const Title = ({ type, text, color, align }: IPropsTitle) => {

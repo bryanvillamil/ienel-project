@@ -1,67 +1,78 @@
 import React from 'react'
-import { BoxProyects, Card } from './styledComponents'
-import Link from 'next/link'
-import { Carousel, Title } from '@components/index'
+import Image from 'next/image'
+import Swal from 'sweetalert2'
+import { Title, Paragraph } from '@components/index'
+import {
+  BoxProyects,
+  Card,
+  CardImage,
+  CardBody,
+  TitleCard
+} from './styledComponents'
+import { IPropsProject } from '@/typed/projects'
 
-
-export const CardProject = ( {items}: any ) => {
-
-    const settings = {
-        dots: true,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        initialSlide: 0,
-        style: { display: 'flex' },
-        responsive: [
-            {
-            breakpoint: 991,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: true
-            }
-            },
-            {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                initialSlide: 2
-            }
-            },
-            {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-            }
-        ]
+export const CardProject = ({ item }: { item: IPropsProject }) => {
+  const {
+    nombreDelProyecto,
+    descripcionDelProyecto: {
+      json: {
+        content: [firstText]
+      }
+    },
+    imagenDelProyectoCollection: {
+      items: [firstItem]
     }
+  } = item
 
-    return (
-    <> 
-        <Carousel settings={settings}>
-            { items.map(({item, index}: any) => {
-                return (
-                    <BoxProyects key={index}>
-                        <Card>
-                            {/* <Title type={2} text={item} color="black" align="center" ></Title> */}
-                            <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima
-                            aut animi rerum architecto veritatis voluptatem nobis
-                            necessitatibus maxime, accusantium similique, sint porro cumque
-                            quas modi officiis ullam nesciunt id quibusdam?
-                            </p>
-                            <Link href="/proyecto/1">ir detalle de projecto</Link>
-                        </Card>
-                    </BoxProyects>
-                )
-            })}
-        </Carousel>
-    </>
+  const alertTest = (title: string, description: string) => {
+    void Swal.fire({
+      title,
+      text: description,
+      icon: 'info',
+      confirmButtonText: 'Aceptar'
+    })
+  }
+  console.log('item =>', item)
+
+  return (
+    <BoxProyects
+      onClick={() => alertTest(nombreDelProyecto, firstText.content[0].value)}>
+      <Card>
+        <CardImage>
+          <Image
+            priority
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }}
+            src={firstItem.url}
+            alt={firstItem.title}
+            width={100}
+            height={100}
+          />
+        </CardImage>
+        <CardBody>
+          <Paragraph
+            text={firstText.content[0].value}
+            size={14}
+            color="gray"
+            align="start"
+            opacity={0.4}
+            margin={4}
+            paddingX={12}
+            paddingY={12}
+          />
+          <TitleCard>
+            <Title
+              type={6}
+              text={nombreDelProyecto}
+              color="white"
+              align="start"
+            />
+          </TitleCard>
+        </CardBody>
+      </Card>
+    </BoxProyects>
   )
 }

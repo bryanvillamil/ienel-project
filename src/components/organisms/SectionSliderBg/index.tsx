@@ -73,6 +73,7 @@ export const SectionSliderBg = () => {
           return (
             <ContentSlide key={img.id}>
               <Image
+                priority
                 src={img.url}
                 alt={img.name}
                 style={{ objectFit: 'cover' }}

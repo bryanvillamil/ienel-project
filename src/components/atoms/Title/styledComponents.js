@@ -57,4 +57,6 @@ export const H6 = styled.h6`
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
+  margin: 0px;
+  padding: 12px;
 `

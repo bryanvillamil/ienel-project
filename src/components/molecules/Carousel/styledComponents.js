@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const ContentSlider = styled.div`
-	width: 100%;
+  width: 100%;
   height: 100%;
   position: relative;
   .slick {
@@ -36,7 +36,7 @@ export const ContentSlider = styled.div`
       }
     }
   }
-`;
+`
 
 export const CustomArrow = styled.svg`
   font-size: 35px;
@@ -49,10 +49,10 @@ export const CustomArrow = styled.svg`
   cursor: pointer;
   color: #fff;
   svg {
-    filter: drop-shadow(5px 5px 5px rgba(0,0,0, 1));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 1));
   }
   &:hover {
     transform: scale(1.1);
     color: #fff;
   }
-`;
+`

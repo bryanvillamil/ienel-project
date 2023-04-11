@@ -6,7 +6,6 @@ export * from './atoms/NavItem'
 export * from './atoms/ContainCenter'
 export * from './atoms/Loading'
 export * from './atoms/LoadingInitialSite'
-export * from './atoms/Title'
 export * from './atoms/Paragraph'
 
 // ----- Molecules

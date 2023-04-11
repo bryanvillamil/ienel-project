@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import React from 'react'
@@ -26,9 +25,9 @@ export const Contact = () => {
     formState: { errors }
   } = useForm()
 
-  const sendEmail = (formData: any) => {
+  const sendEmail = async (formData: any) => {
     console.log(formData)
-    Swal.fire(
+    await Swal.fire(
       '¡Gracias!',
       'Tu mensaje ha sido enviado correctamente.',
       'success'

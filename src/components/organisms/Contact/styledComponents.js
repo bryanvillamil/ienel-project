@@ -76,11 +76,11 @@ export const Row = styled.div`
   textarea {
     min-height: 38px;
     border-radius: 8px;
-    border: 2px solid #aaa;
+    border: 2px solid #7b7b7b;
     transition: all 0.5s ease-in-out;
     font-size: 15px;
     padding: 6px 10px;
-    box-shadow: 2px 5px 12px #333;
+    box-shadow: 1px 2px 6px #a19595;
     font-family: '__Montserrat_b906fa', '__Montserrat_Fallback_b906fa';
     &.field-error {
       border: 1px solid #d92e2eeb;
@@ -114,6 +114,7 @@ export const BtnSubmit = styled(Row)`
     display: flex;
     cursor: pointer;
     padding: 12px 15px;
+    height: 43px;
     background: ${(props) => props.theme.colors.colorPrimary};
     color: #fff;
     font-weight: bold;
@@ -134,6 +135,7 @@ export const BtnSubmit = styled(Row)`
       width: 100px;
       padding: 10px 15px;
       margin-top: 10px;
+      height: auto;
     `}
   }
 `

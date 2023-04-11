@@ -56,9 +56,9 @@ export const CardProject = ({ item }: { item: IPropsProject }) => {
           <Paragraph
             text={firstText.content[0].value}
             size={14}
-            color="gray"
+            color="#333"
             align="start"
-            opacity={0.4}
+            opacity={1}
             margin={4}
             paddingX={12}
             paddingY={12}

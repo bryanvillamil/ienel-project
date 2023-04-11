@@ -38,6 +38,19 @@ export const ContentSlider = styled.div`
         }
       }
     }
+
+    &-dots {
+      li {
+        margin: 0 10px;
+        button {
+          width: 30px;
+          height: 30px;
+          &:before {
+            font-size: 12px;
+          }
+        }
+      }
+    }
   }
 `
 

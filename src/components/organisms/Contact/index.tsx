@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import Swal from 'sweetalert2'
@@ -23,9 +25,9 @@ export const Contact = () => {
     formState: { errors }
   } = useForm()
 
-  const sendEmail = (formData: any) => {
+  const sendEmail = async (formData: any) => {
     console.log(formData)
-    Swal.fire(
+    await Swal.fire(
       '¡Gracias!',
       'Tu mensaje ha sido enviado correctamente.',
       'success'

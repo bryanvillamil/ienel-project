@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import { breakpoint } from 'styled-components-breakpoint'
 
 export const ContentSlider = styled.div`
-	width: 100%;
+  width: 100%;
   height: 100%;
   position: relative;
   .slick {
@@ -26,8 +27,11 @@ export const ContentSlider = styled.div`
     &-list,
     &-track {
       height: 100%;
-      div {
+      & > div {
         height: 100%;
+        & > div {
+          height: 100%; 
+        }
         img {
           width: 100%;
           height: 100%;
@@ -35,8 +39,28 @@ export const ContentSlider = styled.div`
         }
       }
     }
+
+    &-dots {
+      bottom: -40px;
+      li {
+        margin: 0 10px;
+        button {
+          width: 30px;
+          height: 30px;
+          &:before {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    ${breakpoint('md')`
+      &-dots {
+        bottom: -25px;
+      }
+    `}
   }
-`;
+`
 
 export const CustomArrow = styled.svg`
   font-size: 35px;
@@ -49,10 +73,10 @@ export const CustomArrow = styled.svg`
   cursor: pointer;
   color: #fff;
   svg {
-    filter: drop-shadow(5px 5px 5px rgba(0,0,0, 1));
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 1));
   }
   &:hover {
     transform: scale(1.1);
     color: #fff;
   }
-`;
+`

@@ -10,9 +10,10 @@ export const ContentProjects = styled(Element)`
 	flex-direction: column;
 	background: ${props => props.theme.colors.colorPrimary};
 	height: auto;
-	padding: 50px 0;
+	padding: 50px 0 80px;
 	${breakpoint('md')`
     height: 65vh;
+		padding: 50px 0;
   `}
 	${breakpoint('lg')`
     height: 72vh;

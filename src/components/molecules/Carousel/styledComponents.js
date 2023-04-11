@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { breakpoint } from 'styled-components-breakpoint'
 
 export const ContentSlider = styled.div`
   width: 100%;
@@ -40,6 +41,7 @@ export const ContentSlider = styled.div`
     }
 
     &-dots {
+      bottom: -40px;
       li {
         margin: 0 10px;
         button {
@@ -51,6 +53,12 @@ export const ContentSlider = styled.div`
         }
       }
     }
+
+    ${breakpoint('md')`
+      &-dots {
+        bottom: -25px;
+      }
+    `}
   }
 `
 

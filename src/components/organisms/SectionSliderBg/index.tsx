@@ -11,6 +11,7 @@ import {
   SectionSlider,
   ContentSlide,
   InfoCarousel,
+  InfoCarouselButton,
   ContentSvgs,
   SvgSmall,
   SvgBig
@@ -49,26 +50,27 @@ const BG_LIST = [
   }
 ]
 
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1
-}
-
 export const SectionSliderBg = () => {
   return (
     <SectionSlider name="home">
       <InfoCarousel>
         <h2>Proveemos el mejor servicio electrico para ti</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum deserunt
-          tenetur accusantium aut eius velit, odio molestias. Dolores, impedit
-          quae amet inventore pariatur sint!
+          ¡Si quieres conocer mas de nuestros servicios te invitanos a que te
+          contactes con nosotros, estaremos preparados para brindarte el mejor
+          servicio!
         </p>
+        <InfoCarouselButton
+          to="contact"
+          spy={true}
+          smooth={true}
+          duration={800}
+          offset={-100}>
+          Contáctanos
+        </InfoCarouselButton>
       </InfoCarousel>
-      <Carousel settings={settings}>
+
+      <Carousel>
         {BG_LIST.map((img) => {
           return (
             <ContentSlide key={img.id}>

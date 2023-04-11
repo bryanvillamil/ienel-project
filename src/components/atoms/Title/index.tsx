@@ -2,7 +2,7 @@ import React from 'react'
 import { H1, H2, H3, H4, H5, H6 } from './styledComponents'
 
 interface IPropsTitle {
-  type: number
+  type: number | string
   text: string
   color: string
   marginX?: number
@@ -20,66 +20,62 @@ interface IPropsTitle {
 }
 
 export const Title = ({ type, text, color, align }: IPropsTitle) => {
-  switch (type) {
-    case 2:
-      return (
-        <H2
-          style={{
-            color: `${color}`,
-            textAlign: `${align}`
-          }}>
-          {text}
-        </H2>
-      )
-    case 3:
-      return (
-        <H3
-          style={{
-            color: `${color}`,
-            textAlign: `${align}`
-          }}>
-          {text}
-        </H3>
-      )
-    case 4:
-      return (
-        <H4
-          style={{
-            color: `${color}`,
-            textAlign: `${align}`
-          }}>
-          {text}
-        </H4>
-      )
-    case 5:
-      return (
-        <H5
-          style={{
-            color: `${color}`,
-            textAlign: `${align}`
-          }}>
-          {text}
-        </H5>
-      )
-    case 6:
-      return (
-        <H6
-          style={{
-            color: `${color}`,
-            textAlign: `${align}`
-          }}>
-          {text}
-        </H6>
-      )
-    default:
-      return (
-        <H1
-          style={{
-            color: `${color}`,
-            textAlign: `${align}`
-          }}>
-          {text}
-        </H1>
-      )
+  const TITLES: any = {
+    1: (
+      <H1
+        style={{
+          color: `${color}`,
+          textAlign: `${align}`
+        }}>
+        {text}
+      </H1>
+    ),
+    2: (
+      <H2
+        style={{
+          color: `${color}`,
+          textAlign: `${align}`
+        }}>
+        {text}
+      </H2>
+    ),
+    3: (
+      <H3
+        style={{
+          color: `${color}`,
+          textAlign: `${align}`
+        }}>
+        {text}
+      </H3>
+    ),
+    4: (
+      <H4
+        style={{
+          color: `${color}`,
+          textAlign: `${align}`
+        }}>
+        {text}
+      </H4>
+    ),
+    5: (
+      <H5
+        style={{
+          color: `${color}`,
+          textAlign: `${align}`
+        }}>
+        {text}
+      </H5>
+    ),
+    6: (
+      <H6
+        style={{
+          color: `${color}`,
+          textAlign: `${align}`
+        }}>
+        {text}
+      </H6>
+    )
   }
+
+  return TITLES[type]
 }

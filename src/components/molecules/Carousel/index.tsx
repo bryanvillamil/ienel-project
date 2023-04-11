@@ -24,13 +24,23 @@ const CustomNextArrow = (props: any) => {
 }
 
 const defaultSettings = {
-  dots: true,
+  dots: false,
+  arrows: true,
   infinite: true,
   speed: 500,
+  autoplay: true,
   slidesToShow: 1,
   slidesToScroll: 1,
   prevArrow: <CustomPrevArrow />,
-  nextArrow: <CustomNextArrow />
+  nextArrow: <CustomNextArrow />,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false
+      }
+    }
+  ]
 }
 
 export const Carousel = ({
@@ -38,7 +48,7 @@ export const Carousel = ({
   settings
 }: {
   children: React.ReactNode
-  settings: object
+  settings?: object
 }) => {
   const mergedSettings = { ...defaultSettings, ...settings }
 

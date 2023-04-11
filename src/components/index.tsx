@@ -1,5 +1,7 @@
 // ----- Atoms
 export * from './atoms/Seo'
+export * from './atoms/Button'
+export * from './atoms/Title'
 export * from './atoms/NavItem'
 export * from './atoms/ContainCenter'
 export * from './atoms/Loading'

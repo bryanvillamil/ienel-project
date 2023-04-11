@@ -1,19 +1,23 @@
 import styled from 'styled-components'
 import { Element } from 'react-scroll';
+import { breakpoint } from 'styled-components-breakpoint';
 import 'animate.css';
 
 export const ContentAbout = styled(Element)`
 	position: relative;
-  	width: 100%;
+  width: 100%;
 	display: flex;
 	flex-direction: column;
-	height: 80vh;
+	height: 70vh;
+	${breakpoint('md')`
+    height: 80vh;
+	`}
 `;
 
 export const BgFixedAbout = styled.div`
 	width: 100%;
 	height: 100%;
-	background-size: cover;
+	background-size: contain;
 	background-attachment: fixed;
 	position: absolute;
 	inset: 0;
@@ -25,10 +29,13 @@ export const BgFixedAbout = styled.div`
 		position: absolute;
 		inset: 0;
 		background: ${props => props.theme.colors.colorPrimary};
-		background: #111;
+		background: #111; /* rgb(36 82 26) */
 		display: flex;
 		opacity: 0.8;
 	}
+	${breakpoint('md')`
+    background-size: cover;
+	`}
 `;
 
 export const ContentAboutText = styled.div`

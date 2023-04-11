@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Element } from 'react-scroll';
+import { breakpoint } from 'styled-components-breakpoint';
 import 'animate.css';
 
 export const ContentServices = styled(Element)`
@@ -9,8 +10,11 @@ export const ContentServices = styled(Element)`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 60vh;
+	height: 80vh;
 	background: #fff;
+	${breakpoint('md')`
+    	height: 60vh;
+	`}
 `;
 
 export const ContentServicesText = styled.div`

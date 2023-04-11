@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.10",
+    "@emailjs/browser": "^3.10.0",
     "@graphql-codegen/cli": "^3.2.2",
     "@next/font": "^13.0.4",
     "@types/node": "18.11.9",
@@ -23,6 +24,7 @@
     "animate.css": "^4.1.1",
     "contentful": "^9.3.5",
     "dotenv": "10.0.0",
+    "emailjs": "^4.0.1",
     "google-map-react": "^2.2.0",
     "graphql": "^16.6.0",
     "install": "^0.13.0",
@@ -31,6 +33,7 @@
     "npm": "^9.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.9",
     "react-icons": "^4.8.0",
     "react-scroll": "^1.8.9",
     "react-slick": "^0.29.0",

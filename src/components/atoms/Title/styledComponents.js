@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { breakpoint } from 'styled-components-breakpoint'
 
 export const H1 = styled.h1`
-  font-size: 3.4rem;
+  font-size: 34px;
   letter-spacing: 0.3px;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -10,25 +10,25 @@ export const H1 = styled.h1`
   width: 100%;
   padding: 0 1rem;
   ${breakpoint('xs')`
-    font-size: 4.2rem;
+    font-size: 42px;
   `}
   ${breakpoint('md')`
-    font-size: 5.5rem;
+    font-size: 55px;
   `}
   ${breakpoint('xl')`
-    font-size: 6rem;
+    font-size: 60px;
   `}
 `
 
 export const H2 = styled.h2`
-  font-size: 3rem;
+  font-size: 30px;
   padding: 0 1rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   line-height: 1.5;
   width: 100%;
   ${breakpoint('md')`
-    font-size: 3.2rem;
+    font-size: 35px;
   `}
 `
 

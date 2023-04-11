@@ -12,7 +12,7 @@ export const About = () => {
         entranceAnimation="animate__backInLeft"
         exitAnimation="animate__backOutLeft">
         <InfoAbout>
-          <h2>InfoAboutando div de prueba para animacion</h2>
+          <h2>InfoAboutando div de prueba para animacion 33</h2>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima aut
             animi rerum architecto veritatis voluptatem nobis necessitatibus

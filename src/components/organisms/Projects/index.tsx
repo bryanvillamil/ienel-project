@@ -8,7 +8,7 @@ import {
   CardProject
 } from '@components/index'
 import { useGetAllProyectsQuery } from '@generated/graphql'
-import { ContentProjects } from './styledComponents'
+import { ContentProjects, ContainSlider } from './styledComponents'
 import { IPropsProject } from '@/typed/projects'
 import 'animate.css'
 
@@ -21,7 +21,9 @@ export const Projects = () => {
 
   const settings = {
     dots: true,
-    infinite: false,
+    arrows: false,
+    infinite: true,
+    autoplay: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -30,25 +32,26 @@ export const Projects = () => {
       {
         breakpoint: 991,
         settings: {
+          arrows: true,
           slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true
+          dots: true,
+          infinite: true
         }
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 2
+          slidesToShow: 2,
+          dots: true,
+          slidesToScroll: 1
         }
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          dots: true
         }
       }
     ]
@@ -56,7 +59,7 @@ export const Projects = () => {
 
   return (
     <ContentProjects name="projects" id="projects">
-      <Title type={4} text="Proyectos" color="white" align="center"></Title>
+      <Title type={2} text="Proyectos" color="white" align="center" />
       {loading ? (
         <Loading />
       ) : data != null ? (
@@ -64,11 +67,13 @@ export const Projects = () => {
           <Animate
             entranceAnimation="animate__backInLeft"
             exitAnimation="animate__backOutLeft">
-            <Carousel settings={settings}>
-              {dataItems.map((item: IPropsProject, index) => {
-                return <CardProject key={index} item={item} />
-              })}
-            </Carousel>
+            <ContainSlider>
+              <Carousel settings={settings}>
+                {dataItems.map((item: IPropsProject, index) => {
+                  return <CardProject key={index} item={item} />
+                })}
+              </Carousel>
+            </ContainSlider>
           </Animate>
         </ContainCenter>
       ) : null}

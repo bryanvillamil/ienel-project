@@ -65,7 +65,7 @@ export const CardProject = ({ item }: { item: IPropsProject }) => {
           />
           <TitleCard>
             <Title
-              type={6}
+              type={3}
               text={nombreDelProyecto}
               color="white"
               align="start"

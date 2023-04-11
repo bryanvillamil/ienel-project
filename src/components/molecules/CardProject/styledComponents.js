@@ -1,21 +1,30 @@
 import styled from 'styled-components'
+import { breakpoint } from 'styled-components-breakpoint'
 import 'animate.css'
 
 export const BoxProyects = styled.div`
-  width: 50%;
-  justify-content: center;
-  align-items: center;
-  display: flex !important;
+  width: 80%;
+  max-width: 250px;
+  display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
   cursor: pointer;
+  padding: 50px 0;
+  ${breakpoint('lg')`
+    width: 90%;
+  `}
 `
 export const TitleCard = styled.div`
   width: 100%;
-  height: auto !important;
+  height: auto;
   opacity: 0;
   background: black;
+  h3 {
+    font-size: 18px;
+    padding: 12px 15px;
+    margin: 0;
+  }
 `
 
 export const Card = styled.div`
@@ -25,7 +34,7 @@ export const Card = styled.div`
   z-index: 10;
   transition: all 0.5s ease-in-out;
   position: relative;
-  height: 90% !important;
+  height: 90%;
   overflow: hidden;
   &:hover {
     transform: translateY(-3%);
@@ -39,7 +48,7 @@ export const Card = styled.div`
 `
 export const CardImage = styled.div`
   overflow: hidden;
-  height: 60% !important;
+  height: 60%;
   border-top-left-radius: ${(props) => props.theme.borderRadius.card};
   border-top-right-radius: ${(props) => props.theme.borderRadius.card};
   transform: skewY(-8deg);
@@ -48,7 +57,7 @@ export const CardImage = styled.div`
 `
 
 export const CardBody = styled.div`
-  height: 40% !important;
+  height: 40%;
   border-bottom-left-radius: ${(props) => props.theme.borderRadius.card};
   border-bottom-right-radius: ${(props) => props.theme.borderRadius.card};
   display: flex;
@@ -58,7 +67,7 @@ export const CardBody = styled.div`
 
 export const ButtonCard = styled.div`
   width: fit-content;
-  height: fit-content !important;
+  height: fit-content;
   margin: 0 auto;
   background-color: transparent;
   border-radius: ${(props) => props.theme.borderRadius.card};

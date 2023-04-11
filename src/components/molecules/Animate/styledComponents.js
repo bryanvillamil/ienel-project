@@ -10,7 +10,7 @@ export const SectionRef = styled.section`
 
 export const Content = styled.div`
   width: 100%;
-  height: 60%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

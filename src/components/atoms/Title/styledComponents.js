@@ -22,13 +22,12 @@ export const H1 = styled.h1`
 
 export const H2 = styled.h2`
   font-size: 30px;
-  padding: 0 1rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
   line-height: 1.5;
   width: 100%;
+  margin: 0;
   ${breakpoint('md')`
     font-size: 35px;
+    padding: 20px 10px 0;
   `}
 `
 
@@ -41,9 +40,9 @@ export const H3 = styled.h3`
 
 export const H4 = styled.h4`
   font-size: 1.8rem;
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
+  margin: 10px;
   font-weight: 600;
+  padding: 20px 10px;
 `
 
 export const H5 = styled.h5`

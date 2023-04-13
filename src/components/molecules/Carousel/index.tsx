@@ -43,7 +43,7 @@ const defaultSettings = {
   ]
 }
 
-export const Carousel = ({
+const Carousel = ({
   children,
   settings
 }: {
@@ -58,3 +58,5 @@ export const Carousel = ({
     </ContentSlider>
   )
 }
+
+export default Carousel

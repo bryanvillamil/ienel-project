@@ -5,61 +5,6 @@ export const ContentSlider = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
-  .slick {
-    &-prev,
-    &-next {
-      z-index: 9;
-      height: 40px;
-      width: 40px;
-      top: 40%;
-      &:before {
-        font-size: 35px;
-      }
-    }
-    &-prev {
-      left: 35px;
-    }
-    &-next {
-      right: 35px;
-    }
-
-    &-slider,
-    &-list,
-    &-track {
-      height: 100%;
-      & > div {
-        height: 100%;
-        & > div {
-          height: 100%; 
-        }
-        img {
-          width: 100%;
-          height: 100%;
-          aspect-ratio: auto;
-        }
-      }
-    }
-
-    &-dots {
-      bottom: -40px;
-      li {
-        margin: 0 10px;
-        button {
-          width: 30px;
-          height: 30px;
-          &:before {
-            font-size: 12px;
-          }
-        }
-      }
-    }
-
-    ${breakpoint('md')`
-      &-dots {
-        bottom: -25px;
-      }
-    `}
-  }
 `
 
 export const CustomArrow = styled.svg`

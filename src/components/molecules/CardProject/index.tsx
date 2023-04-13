@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import Swal from 'sweetalert2'
-import { Title, Paragraph } from '@components/index'
+import withReactContent from 'sweetalert2-react-content'
+import { Title, Paragraph, Loading } from '@components/index'
+import Carousel from '@components/molecules/Carousel'
 import {
   BoxProyects,
   Card,
@@ -10,6 +12,17 @@ import {
   TitleCard
 } from './styledComponents'
 import { IPropsProject } from '@/typed/projects'
+
+const MySwal = withReactContent(Swal)
+
+const settings = {
+  dots: false,
+  arrow: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1
+}
 
 export const CardProject = ({ item }: { item: IPropsProject }) => {
   const {
@@ -24,19 +37,54 @@ export const CardProject = ({ item }: { item: IPropsProject }) => {
     }
   } = item
 
-  const alertTest = (title: string, description: string) => {
-    void Swal.fire({
-      title,
-      text: description,
-      icon: 'info',
-      confirmButtonText: 'Aceptar'
+  const [loading, setLoading] = useState(false)
+
+  const handleShowAlert = () => {
+    setLoading(true)
+
+    MySwal.fire({
+      title: nombreDelProyecto,
+      showConfirmButton: false,
+      showCloseButton: true,
+      customClass: {
+        closeButton: 'swal2-close'
+      },
+      html: (
+        <div>
+          {loading && <Loading />}
+          {!loading && (
+            <Carousel settings={settings}>
+              <Image
+                priority
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover'
+                }}
+                src={firstItem.url}
+                alt={firstItem.title}
+                width={500}
+                height={300}
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33.3vw"
+              />
+            </Carousel>
+          )}
+        </div>
+      ),
+      didOpen: () => {
+        setLoading(false)
+      }
     })
   }
+
   console.log('item =>', item)
 
   return (
     <BoxProyects
-      onClick={() => alertTest(nombreDelProyecto, firstText.content[0].value)}>
+      onClick={
+        () => handleShowAlert()
+        //  ModalSlider(nombreDelProyecto, firstText.content[0].value)
+      }>
       <Card>
         <CardImage>
           <Image
@@ -48,8 +96,9 @@ export const CardProject = ({ item }: { item: IPropsProject }) => {
             }}
             src={firstItem.url}
             alt={firstItem.title}
-            width={100}
-            height={100}
+            width={500}
+            height={300}
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33.3vw"
           />
         </CardImage>
         <CardBody>

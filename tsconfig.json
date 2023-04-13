@@ -22,6 +22,7 @@
       "@hooks/*": ["src/hooks/*"],
       "@types/*": ["src/typed/*"],
       "@services/*": ["src/services/*"],
+      "@queries/*": ["src/queries/*"],
       "@generated/*": ["src/generated/*"],
       "@styles/*": ["styles/*"],
       "@graphql/*": ["graphql/*"],

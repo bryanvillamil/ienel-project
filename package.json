@@ -30,6 +30,7 @@
     "install": "^0.13.0",
     "intersection-observer": "^0.12.2",
     "next": "13.0.2",
+    "next-optimized-images": "^2.6.2",
     "npm": "^9.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -40,7 +41,8 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.8",
     "styled-components-breakpoint": "^3.0.0-preview.20",
-    "sweetalert2": "^11.7.3"
+    "sweetalert2": "^11.7.3",
+    "sweetalert2-react-content": "^5.0.7"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^3.2.2",

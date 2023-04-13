@@ -3,12 +3,15 @@ import { ApolloProvider } from '@apollo/client'
 import client from '@graphql/client'
 import { theme } from '@styles/theme'
 import { ThemeProvider } from 'styled-components'
-import { Montserrat } from '@next/font/google'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 import '~styles/globals.scss'
+import { Montserrat } from '@next/font/google'
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
-  subsets: ['latin']
+  subsets: ['latin'],
+  display: 'swap'
 })
 
 export default function App({ Component, pageProps }: AppProps) {

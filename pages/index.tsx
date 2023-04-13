@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
+import type { GetStaticProps } from 'next'
 import { DefaultLayout } from '@templates/index'
+import { getProjectsContent } from '@services/projects'
+import { getBannersPpalContent } from '@services/bannersPpal'
 import {
   BtnWhatsapp,
   LoadingInitialSite,
@@ -11,7 +14,16 @@ import {
   Contact
 } from '@components/index'
 
-export default function Home() {
+interface IPropsData {
+  projects: object
+  bannersPpal: object
+}
+
+export default function Home(props: IPropsData) {
+  const { projects, bannersPpal } = props
+
+  console.log('bannersPpal', bannersPpal)
+
   const [isLoadingHome, setIsLoadingHome] = useState(true)
 
   useEffect(() => {
@@ -35,7 +47,7 @@ export default function Home() {
 
       <About />
 
-      <Projects />
+      <Projects dataProjects={projects} />
 
       <Location />
 
@@ -44,4 +56,14 @@ export default function Home() {
       <BtnWhatsapp />
     </DefaultLayout>
   )
+}
+
+export const getStaticProps: GetStaticProps<any> = async () => {
+  return {
+    // propjects: await getProjectsContent()
+    props: {
+      projects: await getProjectsContent(),
+      bannersPpal: await getBannersPpalContent()
+    }
+  }
 }

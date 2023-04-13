@@ -10,3 +10,81 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
+
+
+.swal2-modal .swal2-close {
+  background: #333;
+  width: 35px;
+  height: 35px;
+  font-size: 2rem;
+  margin-right: 2px;
+  margin-top: 2px;
+  transition: all .5s ease-in-out;
+  &:hover {
+    background: #111;
+    color: #fff;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+
+
+// --------------------------------------
+// Global Styles for carousel react-slick
+// --------------------------------------
+.slick {
+  &-slider,
+  &-list,
+  &-track {
+    height: 100%;
+    & > div {
+      height: 100%;
+      & > div {
+        height: 100%; 
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: auto;
+      }
+    }
+  }
+}
+
+.slick-slider {
+  .slick-arrow {
+    z-index: 9;
+    height: 40px;
+    width: 40px;
+    top: 40%;
+    &:before {
+      font-size: 35px;
+    }
+  }
+  .slick-prev {
+    left: 35px;
+  }
+  .slick-next {
+    right: 35px;
+  }
+
+  .slick-dots {
+    bottom: -40px;
+    li {
+      margin: 0 10px;
+      button {
+        width: 30px;
+        height: 30px;
+        &:before {
+          font-size: 12px;
+        }
+      }
+    }
+    @media (min-width: 768px) {
+      bottom: -25px;
+    }
+  }
+} 

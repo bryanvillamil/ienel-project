@@ -4,19 +4,22 @@ import {
   Loading,
   ContainCenter,
   Title,
-  Carousel,
   CardProject
 } from '@components/index'
-import { useGetAllProyectsQuery } from '@generated/graphql'
+import Carousel from '@components/molecules/Carousel'
 import { ContentProjects, ContainSlider } from './styledComponents'
 import { IPropsProject } from '@/typed/projects'
 import 'animate.css'
 
-export const Projects = () => {
-  const { loading, data } = useGetAllProyectsQuery()
-  const { home } = data ?? {}
-  const { proyectosCollection } = home ?? {}
-  const items: any[] = proyectosCollection?.items ?? []
+interface IPropsData {
+  description?: string
+  items?: string[]
+}
+
+export const Projects = ({ dataProjects }: { dataProjects: IPropsData }) => {
+  console.log('dataProjects', dataProjects)
+
+  const items: any[] = dataProjects?.items ?? []
   const dataItems: IPropsProject[] = items ?? []
 
   const settings = {
@@ -60,9 +63,9 @@ export const Projects = () => {
   return (
     <ContentProjects name="projects" id="projects">
       <Title type={2} text="Proyectos" color="white" align="center" />
-      {loading ? (
+      {dataProjects === null ? (
         <Loading />
-      ) : data != null ? (
+      ) : dataProjects != null ? (
         <ContainCenter>
           <Animate
             entranceAnimation="animate__backInLeft"

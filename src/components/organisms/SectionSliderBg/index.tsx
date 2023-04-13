@@ -1,12 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
-import Solar1 from '@images/bg/solar-1.jpg'
-import Solar2 from '@images/bg/solar-2.jpg'
-import Solar3 from '@images/bg/solar-3.jpg'
-import Solar4 from '@images/bg/solar-4.jpg'
-import Solar5 from '@images/bg/solar-5.jpg'
-import Solar6 from '@images/bg/solar-6.jpg'
-import { Carousel } from '@components/index'
+import Solar1 from '@images/bg/solar-1.webp'
+import Solar2 from '@images/bg/solar-2.webp'
+import Solar3 from '@images/bg/solar-3.webp'
+import Solar4 from '@images/bg/solar-4.webp'
+import Solar5 from '@images/bg/solar-5.webp'
+import Solar6 from '@images/bg/solar-6.webp'
+import Carousel from '@components/molecules/Carousel'
 import {
   SectionSlider,
   ContentSlide,
@@ -75,10 +75,14 @@ export const SectionSliderBg = () => {
           return (
             <ContentSlide key={img.id}>
               <Image
-                priority
                 src={img.url}
                 alt={img.name}
+                width={1200}
+                height={800}
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33.33vw"
+                placeholder="blur"
                 style={{ objectFit: 'cover' }}
+                loading="lazy"
               />
             </ContentSlide>
           )

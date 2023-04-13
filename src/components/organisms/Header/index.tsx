@@ -18,7 +18,7 @@ export const Header = () => {
     <HeaderCustom>
       <ContainCenter>
         <HeaderLogo>
-          <Link spy={true} smooth={true} duration={500} to="home">
+          <Link spy={true} smooth={true} duration={500} to="/">
             <ContentLogo>
               <Image
                 priority

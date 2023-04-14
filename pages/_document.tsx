@@ -5,6 +5,10 @@ class MyDocument extends Document {
     return (
       <Html lang="es">
         <Head>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+          />
           <style>{`
             @font-face {
               font-display: swap;

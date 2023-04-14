@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import React from 'react'
+import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import Swal from 'sweetalert2'
 // import emailjs from '@emailjs/browser'
-import { Animate, ContainCenter, Title } from '@components/index'
+import Bg from '@images/bg/solar-1.jpg'
+import { Animate, Title } from '@components/index'
 import {
   ContentContact,
   Description,
@@ -13,7 +15,9 @@ import {
   Row,
   Label,
   BtnSubmit,
-  Error
+  Error,
+  BoxLeft,
+  BoxRight
 } from './styledComponents'
 import 'animate.css'
 
@@ -54,22 +58,23 @@ export const Contact = () => {
 
   return (
     <ContentContact name="contact" id="contact">
-      <ContainCenter>
-        <Animate
-          entranceAnimation="animate__zoomIn"
-          exitAnimation="animate__zoomOut">
-          <BoxContact>
+      <Animate
+        entranceAnimation="animate__zoomIn"
+        exitAnimation="animate__zoomOut">
+        <BoxContact>
+          <BoxLeft>
+            <Image src={Bg} alt="bg contact" width={900} height={600} />
+          </BoxLeft>
+          <BoxRight>
             <Title type={2} text="Contáctanos" color="#000" align="center" />
 
             <Description>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit
-              atque aliquam optio ad laudantium provident porro? Qui, rerum
-              ratione vel cumque quod odio tenetur obcaecati ex, ullam magnam
-              culpa ab!
+              ¿Quieres saber más sobre nuestros productos o servicios?
+              Escríbenos y te responderemos lo antes posible.
             </Description>
 
             <Form onSubmit={handleSubmit(sendEmail)}>
-              <Row>
+              <Row className="name">
                 <Label>Nombre Completo</Label>
                 <input
                   className={errors.phone && 'field-error'}
@@ -81,7 +86,7 @@ export const Contact = () => {
                 )}
               </Row>
 
-              <Row>
+              <Row className="email">
                 <Label>Email</Label>
                 <input
                   className={errors.phone && 'field-error'}
@@ -97,7 +102,7 @@ export const Contact = () => {
                 )}
               </Row>
 
-              <Row>
+              <Row className="phone">
                 <Label>Telefono</Label>
                 <input
                   type="number"
@@ -106,7 +111,7 @@ export const Contact = () => {
                 />
               </Row>
 
-              <Row>
+              <Row className="message">
                 <Label>Mensaje</Label>
                 <textarea
                   rows={8}
@@ -123,9 +128,9 @@ export const Contact = () => {
                 <input type="submit" value="Enviar" />
               </BtnSubmit>
             </Form>
-          </BoxContact>
-        </Animate>
-      </ContainCenter>
+          </BoxRight>
+        </BoxContact>
+      </Animate>
     </ContentContact>
   )
 }

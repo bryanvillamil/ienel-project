@@ -1,18 +1,19 @@
 import client from '@graphql/client'
-import { GET_ALL_PROYECTS_QUERY } from '@queries/products'
+import { GET_LOGO_QUERY } from '@queries/logo'
 
-export const getProjectsContent = async () => {
+export const getLogoContent = async () => {
   const { data } = await client.query({
-    query: GET_ALL_PROYECTS_QUERY
+    query: GET_LOGO_QUERY
   });
+
+  console.log('data', data);
+  
 
   // const { home } = data ?? {}
   // const { proyectosCollection } = home ?? {}
   // const items: any[] = proyectosCollection?.items ?? []
   // const dataItems: IPropsProject[] = items ?? []
-  
   return {
-    description: data?.home?.informacionProyectos.json.content[0].content[0].value,
-    items: data?.home?.proyectosCollection?.items,
+    dataLogo: data?.home?.logoPrincipal
   }
 }

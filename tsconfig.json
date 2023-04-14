@@ -20,7 +20,7 @@
       "@assets/*": ["src/assets/*"],
       "@images/*": ["src/assets/img/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@types/*": ["src/typed/*"],
+      "@typed/*": ["src/typed/*"],
       "@services/*": ["src/services/*"],
       "@queries/*": ["src/queries/*"],
       "@generated/*": ["src/generated/*"],

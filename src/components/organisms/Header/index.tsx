@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-scroll'
 import Image from 'next/image'
-import Logo from '@images/logo-ienel.png'
 import { Navbar, ContainCenter } from '@components/index'
+import { ILogoData } from '@typed/logo'
 
 import {
   HeaderCustom,
@@ -11,8 +11,17 @@ import {
   HeaderMenu
 } from './styledComponents'
 
-export const Header = () => {
+interface IPropsHeader {
+  logo: ILogoData
+}
+
+export const Header = (props: IPropsHeader) => {
   const [navActive, setNavActive] = useState(false)
+  const {
+    logo: {
+      dataLogo: { url, title, width, height }
+    }
+  } = props
 
   return (
     <HeaderCustom>
@@ -23,8 +32,10 @@ export const Header = () => {
               <Image
                 priority
                 style={{ width: 'auto', height: 'auto' }}
-                src={Logo}
-                alt="Logo Ienel"
+                src={url}
+                alt={title}
+                width={width}
+                height={height}
               />
             </ContentLogo>
           </Link>

@@ -9,13 +9,17 @@ export const ContentContact = styled(Element)`
   display: flex;
   flex-direction: column;
   background: #fff;
-  min-height: 80vh;
+  min-height: 85vh;
   height: 100%;
-  padding: 40px 0;
-`
+  padding: 0 0 40px;
+  ${breakpoint('lg')`
+    padding: 40px 0;
+    padding: 0;
+	`}
+`;
 
 export const BoxContact = styled.div`
-  width: 90%;
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -23,9 +27,58 @@ export const BoxContact = styled.div`
   align-items: center;
   margin: auto;
   ${breakpoint('lg')`
+    height: 95vh;
+    flex-direction: row;
+	`}
+  ${breakpoint('xxl')`
 		width: 100%;
+    height: 85vh;
 	`}
 `
+
+
+export const BoxLeft = styled.div`
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  ${breakpoint('md')`
+    height: 45vh;
+	`}
+  ${breakpoint('lg')`
+		width: 45%;
+    height: 100%;
+	`}
+  ${breakpoint('xxl')`
+		width: 50%;
+	`}
+`;
+
+export const BoxRight = styled.div`
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 20px;
+  margin-top: 30px;
+  ${breakpoint('md')`
+    margin-top: 0;
+	`}
+  ${breakpoint('lg')`
+		width: 55%;
+	`}
+  ${breakpoint('xxl')`
+		width: 50%;
+	`}
+`;
 
 export const Description = styled.p`
   line-height: 1.3;
@@ -40,27 +93,52 @@ export const Description = styled.p`
     margin-bottom: 35px;
 	`}
   ${breakpoint('lg')`
-		max-width: 650px;
+		width: 90%;
     line-height: 1.5;
+    font-size: 14px;
+    margin-bottom: 0;
+	`}
+  ${breakpoint('xxl')`
+		max-width: 700px;
 	`}
 `
 
 export const Form = styled.form`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   width: 100%;
   padding: 20px 0;
   ${breakpoint('lg')`
-		max-width: 650px;
+		// max-width: 580px;
+    width: 90%;
+    padding: 10px 0;
+	`}
+  ${breakpoint('xxl')`
+		max-width: 700px;
 	`}
 `
 
-export const Label = styled(Description)`
+export const Label = styled.label`
+  line-height: 1.3;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000;
   justify-content: flex-start;
   font-weight: bold;
   margin: 10px 0;
+  font-size: 14px;
+  ${breakpoint('sm')`
+		text-align: initial;
+    margin-bottom: 35px;
+	`}
   ${breakpoint('md')`
 		margin: 20px 0 10px;
+    font-size: 14px;
+	`}
+  ${breakpoint('lg')`
+    line-height: 1.3;
 	`}
 `
 
@@ -90,17 +168,17 @@ export const Row = styled.div`
       border: 2px solid ${(props) => props.theme.colors.colorPrimary};
     }
   }
-  ${breakpoint('sm')`
-    label {
-      font-size: 10px;
-    }
-	`}
   ${breakpoint('md')`
     margin-top: 20px;
+    &.email,
+    &.phone {
+      width: 48%;
+    }
 	`}
   ${breakpoint('lg')`
-    label {
-      font-size: 16px;
+    margin-top: 10px;
+    input {
+      min-height: 34px;
     }
 	`}
 `

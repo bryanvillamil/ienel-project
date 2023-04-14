@@ -3,26 +3,33 @@ import type { GetStaticProps } from 'next'
 import { DefaultLayout } from '@templates/index'
 import { getProjectsContent } from '@services/projects'
 import { getBannersPpalContent } from '@services/bannersPpal'
+import { getLogoContent } from '@services/logo'
+import { IPropsProject } from '@typed/projects'
+import { ILogoData } from '@typed/logo'
 import {
   BtnWhatsapp,
   LoadingInitialSite,
   SectionSliderBg,
   Services,
-  Projects,
+  ProjectsNew,
   About,
   Location,
   Contact
 } from '@components/index'
 
 interface IPropsData {
-  projects: object
+  projects: {
+    items: [IPropsProject]
+  }
   bannersPpal: object
+  logo: ILogoData
 }
 
 export default function Home(props: IPropsData) {
-  const { projects, bannersPpal } = props
+  const { projects, bannersPpal, logo } = props
 
   console.log('bannersPpal', bannersPpal)
+  console.log('items', projects.items)
 
   const [isLoadingHome, setIsLoadingHome] = useState(true)
 
@@ -40,14 +47,14 @@ export default function Home(props: IPropsData) {
   }
 
   return (
-    <DefaultLayout title="IENEL - Home">
+    <DefaultLayout title="IENEL - Home" logo={logo}>
       <SectionSliderBg />
 
       <Services />
 
       <About />
 
-      <Projects dataProjects={projects} />
+      <ProjectsNew dataProjects={projects} />
 
       <Location />
 
@@ -63,7 +70,8 @@ export const getStaticProps: GetStaticProps<any> = async () => {
     // propjects: await getProjectsContent()
     props: {
       projects: await getProjectsContent(),
-      bannersPpal: await getBannersPpalContent()
+      bannersPpal: await getBannersPpalContent(),
+      logo: await getLogoContent()
     }
   }
 }

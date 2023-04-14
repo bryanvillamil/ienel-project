@@ -12,7 +12,6 @@ export * from './atoms/Paragraph'
 // ----- Molecules
 export * from './molecules/Navbar'
 export * from './molecules/Animate'
-export * from './molecules/Carousel'
 export * from './molecules/Map'
 export * from './molecules/CardProject'
 

@@ -4,13 +4,7 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { Title, Paragraph, Loading } from '@components/index'
 import Carousel from '@components/molecules/Carousel'
-import {
-  BoxProyects,
-  Card,
-  CardImage,
-  CardBody,
-  TitleCard
-} from './styledComponents'
+import { BoxProyect, Card, CardImage, CardBody } from './styledComponents'
 import { IPropsProject } from '@/typed/projects'
 
 const MySwal = withReactContent(Swal)
@@ -42,10 +36,11 @@ export const CardProject = ({ item }: { item: IPropsProject }) => {
   const handleShowAlert = () => {
     setLoading(true)
 
-    MySwal.fire({
+    void MySwal.fire({
       title: nombreDelProyecto,
       showConfirmButton: false,
       showCloseButton: true,
+      width: 800,
       customClass: {
         closeButton: 'swal2-close'
       },
@@ -77,10 +72,8 @@ export const CardProject = ({ item }: { item: IPropsProject }) => {
     })
   }
 
-  console.log('item =>', item)
-
   return (
-    <BoxProyects
+    <BoxProyect
       onClick={
         () => handleShowAlert()
         //  ModalSlider(nombreDelProyecto, firstText.content[0].value)
@@ -101,27 +94,21 @@ export const CardProject = ({ item }: { item: IPropsProject }) => {
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33.3vw"
           />
         </CardImage>
+
         <CardBody>
+          <Title type={3} text={nombreDelProyecto} color="#000" align="start" />
           <Paragraph
             text={firstText.content[0].value}
-            size={14}
+            size={12}
             color="#333"
             align="start"
             opacity={1}
             margin={4}
-            paddingX={12}
-            paddingY={12}
+            paddingX={15}
+            paddingY={3}
           />
-          <TitleCard>
-            <Title
-              type={3}
-              text={nombreDelProyecto}
-              color="white"
-              align="start"
-            />
-          </TitleCard>
         </CardBody>
       </Card>
-    </BoxProyects>
+    </BoxProyect>
   )
 }

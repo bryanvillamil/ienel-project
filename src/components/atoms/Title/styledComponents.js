@@ -26,8 +26,13 @@ export const H2 = styled.h2`
   width: 100%;
   margin: 0;
   ${breakpoint('md')`
+    font-size: 30px;
+  `}
+  ${breakpoint('lg')`
+    font-size: 32px;
+  `}
+  ${breakpoint('xl')`
     font-size: 35px;
-    padding: 20px 10px 0;
   `}
 `
 
@@ -36,6 +41,12 @@ export const H3 = styled.h3`
   margin-top: 0.4rem;
   margin-bottom: 0.4rem;
   font-weight: 600;
+  ${breakpoint('lg')`
+    font-size: 16px;
+  `}
+  ${breakpoint('xl')`
+    font-size: 18;
+  `}
 `
 
 export const H4 = styled.h4`

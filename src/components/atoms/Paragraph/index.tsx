@@ -1,4 +1,5 @@
 import React from 'react'
+import { Description } from './styledComponents'
 
 interface IPropsParagraph {
   text: string
@@ -29,20 +30,20 @@ export const Paragraph = ({
   paddingY
 }: IPropsParagraph) => {
   return (
-    <p
+    <Description
       style={{
         color: `${color}`,
         textAlign: `${align}`,
-        fontSize: `${size}`,
         opacity,
         marginTop: margin,
         marginBottom: margin,
         paddingTop: paddingY,
         paddingBottom: paddingY,
         paddingLeft: paddingX,
-        paddingRight: paddingX
+        paddingRight: paddingX,
+        fontWeight: '300'
       }}>
       {text}
-    </p>
+    </Description>
   )
 }

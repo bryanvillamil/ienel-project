@@ -13,8 +13,6 @@ export default function DefaultLayout({
   title,
   logo
 }: DefaultLayoutProps) {
-  console.log('logologologologo', logo)
-
   return (
     <>
       <Seo title={title} />

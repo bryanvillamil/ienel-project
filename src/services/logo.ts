@@ -6,9 +6,6 @@ export const getLogoContent = async () => {
     query: GET_LOGO_QUERY
   });
 
-  console.log('data', data);
-  
-
   // const { home } = data ?? {}
   // const { proyectosCollection } = home ?? {}
   // const items: any[] = proyectosCollection?.items ?? []

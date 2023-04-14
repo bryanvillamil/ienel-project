@@ -72,8 +72,6 @@ export const CardProject = ({ item }: { item: IPropsProject }) => {
     })
   }
 
-  console.log('item =>', item)
-
   return (
     <BoxProyect
       onClick={

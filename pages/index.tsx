@@ -11,7 +11,7 @@ import {
   LoadingInitialSite,
   SectionSliderBg,
   Services,
-  ProjectsNew,
+  Projects,
   About,
   Location,
   Contact
@@ -29,7 +29,6 @@ export default function Home(props: IPropsData) {
   const { projects, bannersPpal, logo } = props
 
   console.log('bannersPpal', bannersPpal)
-  console.log('items', projects.items)
 
   const [isLoadingHome, setIsLoadingHome] = useState(true)
 
@@ -54,7 +53,7 @@ export default function Home(props: IPropsData) {
 
       <About />
 
-      <ProjectsNew dataProjects={projects} />
+      <Projects dataProjects={projects} />
 
       <Location />
 

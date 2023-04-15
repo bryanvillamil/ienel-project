@@ -41,7 +41,8 @@ export const Paragraph = ({
         paddingBottom: paddingY,
         paddingLeft: paddingX,
         paddingRight: paddingX,
-        fontWeight: '300'
+        fontWeight: '300',
+        fontSize: `${size}px`
       }}>
       {text}
     </Description>

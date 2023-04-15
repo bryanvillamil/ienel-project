@@ -8,6 +8,7 @@ export * from './atoms/ContainCenter'
 export * from './atoms/Loading'
 export * from './atoms/LoadingInitialSite'
 export * from './atoms/Paragraph'
+export * from './atoms/CardService'
 
 // ----- Molecules
 export * from './molecules/Navbar'

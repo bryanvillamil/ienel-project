@@ -2,8 +2,6 @@ import styled from 'styled-components'
 import { breakpoint } from 'styled-components-breakpoint'
 
 export const CardContainer = styled.div`
-  max-width: 320px;
-  height: 240px;
   perspective: 1000px;
   transition: all 0.8s ease;
   position: relative;
@@ -48,8 +46,8 @@ export const CardBack = styled.div`
   }
 `
 export const Card = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   perspective: 1000px;
   &:hover ${CardFront} {
     transform: rotateY(180deg);
@@ -57,13 +55,14 @@ export const Card = styled.div`
   &:hover ${CardBack} {
     transform: rotateY(0deg);
   }
-  ${breakpoint('md')`
-    width: 244px;
+  ${breakpoint('xxs')`
+    width: 150px;
+    height: 150px;
 	`}
   ${breakpoint('lg')`
     width: 170px;
 	`}
-    ${breakpoint('xl')`
+  ${breakpoint('xl')`
     width: 200px;
 	`}
 `
@@ -90,4 +89,10 @@ export const Container = styled.div`
       color: ${(props) => props.theme.colors.colorPrimary};
     }
   }
+  ${breakpoint('xxs')`
+    width: 50%;
+	`}
+  ${breakpoint('md')`
+    width: auto;
+	`}
 `

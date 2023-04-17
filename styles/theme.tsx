@@ -17,6 +17,7 @@ export const theme = {
   // fonts: ["sans-serif", "Roboto"],
   // font-family: ${props => props.theme.fonts[0]};
   breakpoints: {
+    xxs: 450,
     xs: 480,
     sm: 568,
     md: 768,

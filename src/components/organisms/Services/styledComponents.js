@@ -59,11 +59,13 @@ export const ServicesCards = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: start;
-  gap: 20px;
+  flex-wrap: wrap;
+  
   ${breakpoint('sm')`
     justify-content: space-evenly;
 	`}
   ${breakpoint('lg')`
     justify-content: space-between;
+    // gap: 20px;
 	`}
 `

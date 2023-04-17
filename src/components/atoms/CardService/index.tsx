@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Paragraph } from '@components/index'
+import { Paragraph, Title } from '@components/index'
 import {
   Card,
   Container,
@@ -32,26 +32,31 @@ export const CardService: React.FC<ServicesProps> = ({ service }) => {
           onMouseLeave={handleCardFlipLeave}>
           <CardFront
             style={{ transform: isFlipped ? 'rotateY(180deg)' : 'none' }}>
-            <service.iconoDelServicio size={120} />
+            <service.iconoDelServicio size={60} />
           </CardFront>
           <CardBack
             style={{ transform: isFlipped ? 'none' : 'rotateY(180deg)' }}>
             <Paragraph
               text={service.descripcionDelServicio}
               size={14}
-              color="white"
+              color="black"
               align="center"
             />
           </CardBack>
         </CardContainer>
       </Card>
       <Text style={{ marginTop: '15px' }}>
-        <Paragraph
+        {/* <Paragraph
           text={service.nombreDelServicio}
           size={16}
           color=""
           align="center"
-        />
+        /> */}
+        <Title
+          type={6}
+          text={service.nombreDelServicio}
+          color=""
+          align="center"></Title>
       </Text>
     </Container>
   )

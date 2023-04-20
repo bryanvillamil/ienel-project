@@ -188,24 +188,24 @@ export const BtnSubmit = styled(Row)`
   justify-content: center;
   align-items: center;
   margin: 30px auto 0;
-  input {
+  button {
     display: flex;
     cursor: pointer;
     padding: 12px 15px;
-    height: 43px;
-    background: ${(props) => props.theme.colors.colorPrimary};
-    color: #fff;
-    font-weight: bold;
+    background: ${props => props.theme.colors.colorPrimary};
     transition: all 0.5s ease;
     border-radius: 5px;
     margin-top: 20px;
     text-align: center;
-    box-shadow: 1px 4px 8px #111;
+    box-shadow: 1px 4px 8px #333;
     width: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
     &:hover {
       transform: scale(1.1);
     }
@@ -213,7 +213,6 @@ export const BtnSubmit = styled(Row)`
       width: 100px;
       padding: 10px 15px;
       margin-top: 10px;
-      height: auto;
     `}
   }
 `

@@ -125,7 +125,7 @@ export const Contact = () => {
               </Row>
 
               <BtnSubmit className="content-submit">
-                <input type="submit" value="Enviar" />
+                <button type="submit">Enviar</button>
               </BtnSubmit>
             </Form>
           </BoxRight>

@@ -32,7 +32,7 @@ export const CardService: React.FC<ServicesProps> = ({ service }) => {
           onMouseLeave={handleCardFlipLeave}>
           <CardFront
             style={{ transform: isFlipped ? 'rotateY(180deg)' : 'none' }}>
-            <service.iconoDelServicio size={60} />
+            <service.iconoDelServicio size={50} />
           </CardFront>
           <CardBack
             style={{ transform: isFlipped ? 'none' : 'rotateY(180deg)' }}>

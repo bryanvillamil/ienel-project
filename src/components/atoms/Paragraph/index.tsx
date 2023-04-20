@@ -21,7 +21,6 @@ interface IPropsParagraph {
 
 export const Paragraph = ({
   text,
-  size,
   color,
   align,
   opacity,
@@ -41,8 +40,7 @@ export const Paragraph = ({
         paddingBottom: paddingY,
         paddingLeft: paddingX,
         paddingRight: paddingX,
-        fontWeight: '300',
-        fontSize: `${size}px`
+        fontWeight: '300'
       }}>
       {text}
     </Description>

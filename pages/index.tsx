@@ -4,6 +4,7 @@ import { DefaultLayout } from '@templates/index'
 import { getProjectsContent } from '@services/projects'
 import { getBannersPpalContent } from '@services/bannersPpal'
 import { getLogoContent } from '@services/logo'
+import { getNumberWpContent } from '@services/numWhatsapp'
 import { IPropsProject } from '@typed/projects'
 import { ILogoData } from '@typed/logo'
 import {
@@ -12,7 +13,7 @@ import {
   SectionSliderBg,
   Services,
   Projects,
-  About,
+  // About,
   Location,
   Contact
 } from '@components/index'
@@ -23,10 +24,13 @@ interface IPropsData {
   }
   bannersPpal: object
   logo: ILogoData
+  numberWp: {
+    number: string
+  }
 }
 
 export default function Home(props: IPropsData) {
-  const { projects, bannersPpal, logo } = props
+  const { projects, bannersPpal, logo, numberWp } = props
 
   console.log('bannersPpal', bannersPpal)
 
@@ -51,7 +55,7 @@ export default function Home(props: IPropsData) {
 
       <Services />
 
-      <About />
+      {/* <About /> */}
 
       <Projects dataProjects={projects} />
 
@@ -59,7 +63,7 @@ export default function Home(props: IPropsData) {
 
       <Contact />
 
-      <BtnWhatsapp />
+      <BtnWhatsapp number={numberWp.number} />
     </DefaultLayout>
   )
 }
@@ -70,7 +74,8 @@ export const getStaticProps: GetStaticProps<any> = async () => {
     props: {
       projects: await getProjectsContent(),
       bannersPpal: await getBannersPpalContent(),
-      logo: await getLogoContent()
+      logo: await getLogoContent(),
+      numberWp: await getNumberWpContent()
     }
   }
 }

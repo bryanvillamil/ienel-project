@@ -5,10 +5,6 @@ interface IPropsTitle {
   type: number | string
   text: string
   color: string
-  marginX?: number
-  marginY?: number
-  paddingX?: number
-  paddingY?: number
   align:
     | 'start'
     | 'end'

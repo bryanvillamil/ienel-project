@@ -18,7 +18,7 @@ export default function DefaultLayout({
       <Seo title={title} />
       <Header logo={logo} />
       <Main>{children}</Main>
-      <Footer />
+      <Footer logo={logo} />
     </>
   )
 }

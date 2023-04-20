@@ -21,7 +21,6 @@ interface IPropsParagraph {
 
 export const Paragraph = ({
   text,
-  size,
   color,
   align,
   opacity,

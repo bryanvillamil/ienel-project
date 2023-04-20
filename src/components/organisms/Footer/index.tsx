@@ -1,5 +1,13 @@
 import Image from 'next/image'
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn
+} from 'react-icons/fa'
 import { ContainCenter } from '@components/index'
+import { IPNetworks } from '@typed/networks'
+import { ILogoData } from '@typed/logo'
 import {
   FooterCustom,
   FooterContent,
@@ -7,15 +15,18 @@ import {
   Networks,
   ContentLogo
 } from './styledComponents'
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedinIn
-} from 'react-icons/fa'
-import { IPNetworks } from '@typed/networks'
 
-export const Footer = () => {
+interface IPropsHeader {
+  logo: ILogoData
+}
+
+export const Footer = (props: IPropsHeader) => {
+  const {
+    logo: {
+      dataLogo: { url, title, width, height }
+    }
+  } = props
+
   const networks: IPNetworks[] = [
     {
       id: 1,
@@ -43,25 +54,26 @@ export const Footer = () => {
     }
   ]
 
+  const today = new Date()
+  const year = today.getFullYear()
+
   return (
     <FooterCustom>
       <ContainCenter>
         <FooterContent>
           <FooterInfo>
-            <span>2023 </span>
-            IENEL
+            <span>{year}</span> <h2>IENEL</h2>
           </FooterInfo>
-          <div>Hola 2</div>
 
           {/* Logo */}
           <ContentLogo>
             <Image
               priority
               style={{ width: 'auto', height: 'auto' }}
-              src=""
-              alt=""
-              width={100}
-              height={100}
+              src={url}
+              alt={title}
+              width={width}
+              height={height}
             />
           </ContentLogo>
 
@@ -72,7 +84,7 @@ export const Footer = () => {
                 href={network.link}
                 target="_blank"
                 rel="noreferrer">
-                <network.icon size={30} />
+                <network.icon size={25} />
               </a>
             ))}
           </Networks>

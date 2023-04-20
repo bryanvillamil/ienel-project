@@ -67,12 +67,19 @@ export const BoxProjectsInfo = styled.div`
   align-items: flex-start;
   flex-direction: column;
   margin-bottom: 40px;
+  h2 {
+    text-align: center !important;
+  }
   p {
     line-height: 1.3;
+    text-align: center;
   }
   ${breakpoint('md')`
 		width: 100%;
     height: 220px;
+    h2 {
+      text-align: left !important;
+    }
   `}
   ${breakpoint('lg')`
     margin-bottom: 0;

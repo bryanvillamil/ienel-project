@@ -14,6 +14,7 @@ export * from './molecules/Navbar'
 export * from './molecules/Animate'
 export * from './molecules/Map'
 export * from './molecules/CardProject'
+export * from './molecules/CardService'
 
 // ----- Organisms
 export * from './organisms/Header'

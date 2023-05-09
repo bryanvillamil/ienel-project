@@ -33,9 +33,10 @@ export const ContentServicesText = styled.div`
 `
 
 export const InfoServices = styled.div`
-  width: 75%;
+  /* width: 75%; */
+  width: 100%;
   height: 80%;
-  max-width: 1024px;
+  max-width: 1300px;
   display: flex;
   justify-content: center;
   flex-direction: column;

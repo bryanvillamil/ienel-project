@@ -8,7 +8,7 @@ export const theme = {
     /* verde 6: #4A5F19; */
     /* Azul: #0E73FC; */
     /* verde 8: #439B31; */
-    colorPrimary: '#439B31',
+    colorPrimary: '#5e5e5e',
     colorSecondary: '#0E73FC',
     colorBgLoading: '#439B31',
     white: '#fff',

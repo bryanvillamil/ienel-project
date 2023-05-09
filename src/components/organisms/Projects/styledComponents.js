@@ -16,7 +16,7 @@ export const ContentProjects = styled(Element)`
 `
 export const ContainProjects = styled.div`
 	width: 100%;
-	max-width: 1024px;
+	max-width: 1300px;
   height: auto;
   display: flex;
   flex-direction: column;

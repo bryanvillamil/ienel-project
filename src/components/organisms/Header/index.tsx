@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-scroll'
-import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import { Navbar, ContainCenter } from '@components/index'
 import { ILogoData } from '@typed/logo'
 
@@ -15,12 +15,17 @@ interface IPropsHeader {
   logo: ILogoData
 }
 
+const Logo = dynamic(
+  async () => await import('../../atoms/Logo').then((mod) => mod.Logo),
+  {
+    ssr: false
+  }
+)
+
 export const Header = (props: IPropsHeader) => {
   const [navActive, setNavActive] = useState(false)
   const {
-    logo: {
-      dataLogo: { url, title, width, height }
-    }
+    logo: { dataLogo }
   } = props
 
   return (
@@ -29,14 +34,7 @@ export const Header = (props: IPropsHeader) => {
         <HeaderLogo>
           <Link spy={true} smooth={true} duration={500} to="/">
             <ContentLogo>
-              <Image
-                priority
-                style={{ width: 'auto', height: 'auto' }}
-                src={url}
-                alt={title}
-                width={width}
-                height={height}
-              />
+              <Logo dataLogo={dataLogo} />
             </ContentLogo>
           </Link>
         </HeaderLogo>

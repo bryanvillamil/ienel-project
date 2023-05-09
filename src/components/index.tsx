@@ -1,6 +1,7 @@
 // ----- Atoms
 export * from './atoms/Seo'
 export * from './atoms/Button'
+export * from './atoms/Logo'
 export * from './atoms/BtnWhatsapp'
 export * from './atoms/Title'
 export * from './atoms/NavItem'

@@ -14,7 +14,7 @@ import {
   BoxLoading,
   ContentLogo,
   LoadingIcon
-} from './styledComponents'
+} from './styledComponents-two'
 
 const icons = [
   <FaSolarPanel key="1" />,

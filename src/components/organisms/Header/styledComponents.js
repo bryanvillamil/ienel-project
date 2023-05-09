@@ -45,17 +45,13 @@ export const ContentLogo = styled.h1`
 	width: 100%;
 	margin: 0;
 	img {
-		display: flex;
-		object-fit: contain;
-		width: 100%;
+		/* display: flex; */
+		/* object-fit: contain; */
+		width: 100px;
 		max-width: 100px;
-		height: 100%;
+		height: 32px;
+		/* aspect-ratio: 4/1; */
 	}
-	${breakpoint('md')`
-		img {
-			max-width: 100px;
-		}
-	`}
 `;
 
 export const HeaderMenu = styled.div`

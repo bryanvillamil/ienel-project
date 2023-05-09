@@ -1,26 +1,17 @@
-import styled from 'styled-components'
-import { breakpoint } from 'styled-components-breakpoint'
+import styled, { keyframes } from 'styled-components';
 
-/*
-  // const rotate = keyframes`
-  //   100% {
-  //     transform: rotate(360deg);
-  //   }
-  // `  animation: ${rotate} 1s linear infinite; 
-*/
+const spinAnimation = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
 
-export const LoadingIcon = styled.div`
-  display: inline-block;
-  margin: 0 8px;
-  font-size: 35px;
-  color: #fff;
-  ${breakpoint('md')`
-		font-size: 35px;
-	`}
-`
 
 export const ContentLoadingInitialSite = styled.div`
-  background: ${(props) => props.theme.colors.colorBgLoading};
+  background: #fff;
   position: absolute;
   inset: 0;
   display: flex;
@@ -28,24 +19,13 @@ export const ContentLoadingInitialSite = styled.div`
   align-items: center;
 `
 
-export const BoxLoading = styled.div`
-  height: 180px;
-  width: 180px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`
 
-export const ContentLogo = styled.div`
-  height: auto;
-  width: 110px;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  border-radius: 4px;
-  margin-bottom: 25px;
-  filter: drop-shadow(5px 4px 4px #333);
-`
+export const Loading = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 4px solid #000;
+  border-top: 4px solid #fff;
+  animation: ${spinAnimation} 1s linear infinite;
+`;
+

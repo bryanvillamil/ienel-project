@@ -16,7 +16,7 @@ export const BoxProyect = styled.div`
   `}
   ${breakpoint('md')`
     width: 100%;
-    max-width: 450px;
+    // max-width: 450px;
     margin-bottom: 150px;
   `}
   ${breakpoint('lg')`

@@ -46,9 +46,10 @@ export const InfoCarousel = styled.div`
     font-size: 40px;
     letter-spacing: 0.5px;
     margin: 0;
-    text-shadow: 3px 3px 3px #000;
+    text-shadow: 3px 3px 3px #b0b0b0;
     text-align: center;
     color: ${props => props.theme.colors.colorPrimary};
+    color: #111;
   }
   p {
     font-size: 18px;

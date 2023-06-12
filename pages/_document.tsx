@@ -5,10 +5,6 @@ class MyDocument extends Document {
     return (
       <Html lang="es">
         <Head>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
-          />
           <link rel="icon" href="/favicon.ico" />
           <style>{`
             @font-face {

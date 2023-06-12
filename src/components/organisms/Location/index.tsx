@@ -1,5 +1,5 @@
 import React from 'react'
-import { Map } from '@components/index'
+import Map from '../../molecules/Map'
 import { ContentLocation } from './styledComponents'
 
 export const Location = () => {

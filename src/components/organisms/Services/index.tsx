@@ -1,50 +1,19 @@
 import React from 'react'
 import { Animate, Title, CardService } from '@components/index'
-import { IPPropsService } from '@typed/services'
+import { IPropsServices } from '@typed/services'
+
 import {
   ContentServices,
   InfoServices,
   ServicesCards
 } from './styledComponents'
-import {
-  MdElectricalServices,
-  MdOutlineHighlight,
-  MdEnergySavingsLeaf,
-  MdEngineering
-} from 'react-icons/md'
 import 'animate.css'
 
-export const Services = () => {
-  const services: IPPropsService[] = [
-    {
-      id: 1,
-      nombreDelServicio: 'Redes eléctricas',
-      descripcionDelServicio:
-        'Diseño y construcción de redes eléctricas de baja y alta tensión.',
-      iconoDelServicio: MdElectricalServices
-    },
-    {
-      id: 2,
-      nombreDelServicio: 'Sistemas de iluminación',
-      descripcionDelServicio:
-        'Diseño y construcción de sistemas de iluminación pública y privada.',
-      iconoDelServicio: MdOutlineHighlight
-    },
-    {
-      id: 3,
-      nombreDelServicio: 'Eficiencia energética',
-      descripcionDelServicio:
-        'Evaluación, auditoría y consultoría en eficiencia energética para empresas y hogares.',
-      iconoDelServicio: MdEnergySavingsLeaf
-    },
-    {
-      id: 5,
-      nombreDelServicio: 'Ingeniería civil',
-      descripcionDelServicio:
-        'Servicios de ingeniería civil, como diseño y construcción de estructuras de edificios y puentes.',
-      iconoDelServicio: MdEngineering
-    }
-  ]
+export const Services = ({
+  dataServices
+}: {
+  dataServices: IPropsServices
+}) => {
   return (
     <ContentServices name="services" id="services">
       <Animate
@@ -58,8 +27,8 @@ export const Services = () => {
             align="center"
           />
           <ServicesCards>
-            {services.map((service) => {
-              return <CardService service={service} key={service.id} />
+            {dataServices?.dataServices.map((service, index) => {
+              return <CardService service={service} key={index} />
             })}
           </ServicesCards>
         </InfoServices>

@@ -1,26 +1,26 @@
 import { gql } from '@apollo/client';
 
-export const GET_ALL_BANNERSPPAL_QUERY = gql`
-  query GetAllBannersPpal {
+export const GET_SERVICES_QUERY = gql`
+  query GetServices {
     home(id: "3koGax7i3OW9oMqDO6iml8") {
-      titulo
-      metaDescripcion
-      bannerPrincipalCollection {
+      serviciosCollection {
         total
         items {
           ... on ContenidosTransversales {
             tituloPrincipal
-            enlacePrincipal
+            descripcionPrincipal {
+              json 
+            }
             imgenesPrincipalesCollection {
+              skip
               total
               items {
                 url
                 title
                 description
-                width
-                height
               }
             }
+            nombreIcono
           }
         }
       }

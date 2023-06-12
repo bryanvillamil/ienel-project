@@ -1,32 +1,34 @@
-import { useState } from 'react'
-import { Paragraph, Title } from '@components/index'
+// import { useState } from 'react'
+import { Title } from '@components/index' // Paragraph
 import {
-  Card,
+  // Card,
   Container,
-  CardContainer,
-  CardFront,
-  CardBack,
+  // CardContainer,
+  // CardFront,
+  // CardBack,
   Text
 } from './styledComponents'
-import { IPPropsService } from '@typed/services'
+import { IService } from '@typed/services'
 
 interface ServicesProps {
-  service: IPPropsService
+  service: IService
   key: number
 }
 
 export const CardService: React.FC<ServicesProps> = ({ service }) => {
-  const [isFlipped, setIsFlipped] = useState(false)
+  // const [isFlipped, setIsFlipped] = useState(false)
 
-  const handleCardFlipOver = () => {
-    setIsFlipped(true)
-  }
-  const handleCardFlipLeave = () => {
-    setIsFlipped(false)
-  }
+  console.log('sserviceserviceervice', service)
+
+  // const handleCardFlipOver = () => {
+  //   setIsFlipped(true)
+  // }
+  // const handleCardFlipLeave = () => {
+  //   setIsFlipped(false)
+  // }
   return (
     <Container>
-      <Card>
+      {/* <Card>
         <CardContainer
           onMouseOver={handleCardFlipOver}
           onMouseLeave={handleCardFlipLeave}>
@@ -44,7 +46,7 @@ export const CardService: React.FC<ServicesProps> = ({ service }) => {
             />
           </CardBack>
         </CardContainer>
-      </Card>
+      </Card> */}
       <Text style={{ marginTop: '15px' }}>
         {/* <Paragraph
           text={service.nombreDelServicio}
@@ -52,9 +54,10 @@ export const CardService: React.FC<ServicesProps> = ({ service }) => {
           color=""
           align="center"
         /> */}
+
         <Title
-          type={6}
-          text={service.nombreDelServicio}
+          type={3}
+          text={service.tituloPrincipal}
           color=""
           align="center"></Title>
       </Text>

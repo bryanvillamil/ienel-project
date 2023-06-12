@@ -1,12 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import Solar1 from '@images/bg/solar-1.webp'
-import Solar2 from '@images/bg/solar-2.webp'
-import Solar3 from '@images/bg/solar-3.webp'
-import Solar4 from '@images/bg/solar-4.webp'
-import Solar5 from '@images/bg/solar-5.webp'
-import Solar6 from '@images/bg/solar-6.webp'
 import Carousel from '@components/molecules/Carousel'
+import { IBannerData } from '@typed/banner'
 import {
   SectionSlider,
   ContentSlide,
@@ -17,49 +12,16 @@ import {
   SvgBig
 } from './styledComponents'
 
-const BG_LIST = [
-  {
-    id: 1,
-    url: Solar1,
-    name: 'Panel Solar 1'
-  },
-  {
-    id: 2,
-    url: Solar2,
-    name: 'Panel Solar 2'
-  },
-  {
-    id: 3,
-    url: Solar3,
-    name: 'Panel Solar 3'
-  },
-  {
-    id: 4,
-    url: Solar4,
-    name: 'Panel Solar 4'
-  },
-  {
-    id: 5,
-    url: Solar5,
-    name: 'Panel Solar 5'
-  },
-  {
-    id: 6,
-    url: Solar6,
-    name: 'Panel Solar 6'
-  }
-]
-
-export const SectionSliderBg = () => {
+export const SectionSliderBg = ({
+  dataBanner
+}: {
+  dataBanner: IBannerData
+}) => {
   return (
     <SectionSlider name="home">
       <InfoCarousel>
-        <h2>Proveemos el mejor servicio electrico para ti</h2>
-        <p>
-          ¡Si quieres conocer mas de nuestros servicios te invitanos a que te
-          contactes con nosotros, estaremos preparados para brindarte el mejor
-          servicio!
-        </p>
+        <h2>{dataBanner.titulo}</h2>
+        <p>{dataBanner.description}</p>
         <InfoCarouselButton
           to="contact"
           spy={true}
@@ -71,20 +33,25 @@ export const SectionSliderBg = () => {
       </InfoCarousel>
 
       <Carousel>
-        {BG_LIST.map((img) => {
+        {dataBanner.banners.map((dat, index) => {
           return (
-            <ContentSlide key={img.id}>
-              <Image
-                src={img.url}
-                alt={img.name}
-                width={1200}
-                height={800}
-                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33.33vw"
-                placeholder="blur"
-                style={{ objectFit: 'cover' }}
-                loading="lazy"
-              />
-            </ContentSlide>
+            <div key={index}>
+              {dat.imgenesPrincipalesCollection.items.map((image, index) => {
+                return (
+                  <ContentSlide key={index}>
+                    <Image
+                      src={image.url}
+                      alt={image.description || 'alt image'}
+                      width={image.width}
+                      height={image.height}
+                      priority
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33.33vw"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </ContentSlide>
+                )
+              })}
+            </div>
           )
         })}
       </Carousel>

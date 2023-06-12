@@ -1,40 +1,72 @@
-import React from 'react'
-import GoogleMapReact from 'google-map-react'
+import React, { useState } from 'react'
+import GoogleMapReact, { Coords, ChangeEventValue } from 'google-map-react'
 import { ContentMap } from './styledComponents'
 
-const Marker = ({ title }: { title: string }) => <div title={title}></div>
+interface MarkerProps {
+  title: string
+}
 
-const AnyReactComponent = ({
-  title
-}: {
+const Marker: React.FC<MarkerProps> = ({ title }) => (
+  <div title={title}>
+    <img
+      src="https://static.vecteezy.com/system/resources/previews/017/178/337/original/location-map-marker-icon-symbol-on-transparent-background-free-png.png"
+      alt="Marker Icon"
+      style={{
+        width: '30px',
+        height: '38px',
+        objectFit: 'contain',
+        background: '#fff',
+        borderRadius: '20px'
+      }}
+    />
+  </div>
+)
+
+interface AnyReactComponentProps {
   text: string
   lat: number
   lng: number
   title: string
-}) => (
+}
+
+const AnyReactComponent: React.FC<AnyReactComponentProps> = ({ title }) => (
   <div style={{ position: 'relative', width: '30px', height: '30px' }}>
     <Marker title={title} />
   </div>
 )
 
-export const Map = ({ apiKey }: { apiKey: string }) => {
+interface MapProps {
+  apiKey: string
+}
+
+const Map: React.FC<MapProps> = ({ apiKey }: MapProps) => {
+  const [mapCenter, setMapCenter] = useState<Coords>({
+    lat: 6.24857,
+    lng: -75.60117
+  })
   const location = {
-    lat: 6.24825,
-    lng: -75.601234,
+    lat: 6.24857,
+    lng: -75.60117,
     text: 'IENEL SAS'
   }
 
+  const handleMapChange = (value: ChangeEventValue) => {
+    setMapCenter(value.center)
+  }
+
   const defaultProps = {
-    center: location,
-    zoom: 20
+    center: mapCenter,
+    zoom: 20,
+    draggable: true // Habilita el movimiento del marcador
   }
 
   return (
-    <ContentMap>
+    <ContentMap style={{ height: '400px', width: '100%' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: apiKey }}
         defaultCenter={defaultProps.center}
-        defaultZoom={defaultProps.zoom}>
+        defaultZoom={defaultProps.zoom}
+        onChange={handleMapChange}>
         <AnyReactComponent
           lat={location.lat}
           lng={location.lng}
@@ -45,3 +77,5 @@ export const Map = ({ apiKey }: { apiKey: string }) => {
     </ContentMap>
   )
 }
+
+export default Map

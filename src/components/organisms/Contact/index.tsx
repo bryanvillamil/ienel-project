@@ -79,7 +79,7 @@ export const Contact = () => {
                 <input
                   className={errors.phone && 'field-error'}
                   {...register('name', { required: true })}
-                  placeholder="Nombre Completo"
+                  placeholder=""
                 />
                 {errors?.name && (
                   <Error>* El campo Nombre es obligatorio</Error>
@@ -94,7 +94,7 @@ export const Contact = () => {
                     required: true,
                     pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
                   })}
-                  placeholder="Correo Electronico"
+                  placeholder=""
                 />
 
                 {errors?.email && (
@@ -104,11 +104,7 @@ export const Contact = () => {
 
               <Row className="phone">
                 <Label>Telefono</Label>
-                <input
-                  type="number"
-                  {...register('phone')}
-                  placeholder="Telefono"
-                />
+                <input type="number" {...register('phone')} placeholder="" />
               </Row>
 
               <Row className="message">
@@ -117,7 +113,7 @@ export const Contact = () => {
                   rows={8}
                   className={errors.phone && 'field-error'}
                   {...register('message', { required: true })}
-                  placeholder="Mensaje"
+                  placeholder=""
                 />
                 {errors.message && (
                   <Error>* El campo Mensaje es obligatorio</Error>

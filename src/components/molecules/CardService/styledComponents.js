@@ -95,8 +95,7 @@ export const Text = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  h6 {
-    max-width: 80%;
+  h3 {
     margin: 0 auto;
     font-weight: 500;
     color: black;
@@ -104,26 +103,23 @@ export const Text = styled.div`
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     padding: 10px 0 12px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;  
-    overflow: hidden;
-    height: 42px;
+    
     
   }
   ${breakpoint('md')`
-    h6 {
+    h3 {
       line-height: 1.4;
     }
 	`}
   ${breakpoint('lg')`
-    h6 {
+    h3 {
+      max-width: 80%;
       font-size: 14px;
+      height: 42px;
     }
 	`}
   ${breakpoint('xxl')`
-    h6 {
+    h3 {
       font-size: 16px;
     }
 	`}
@@ -132,27 +128,25 @@ export const Text = styled.div`
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   transition: transform 0.6s ease;
-  height: 200px;
+  height: auto;
   margin-bottom: 40px;
+  width: 90%;
   &:hover ${Text} {
     p {
       color: ${(props) => props.theme.colors.colorPrimary};
     }
   }
   ${breakpoint('xxs')`
-    width: 200px;
+    width: 48%;
 	`}
   ${breakpoint('sm')`
     height: 220px;
 	`}
-  ${breakpoint('md')`
-    width: 280px;
-	`}
   ${breakpoint('lg')`
-    width: 25%;
+    width: 33.333%;
     height: 200px;
 	`}
 `

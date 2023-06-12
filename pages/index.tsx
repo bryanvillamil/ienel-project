@@ -4,9 +4,12 @@ import { DefaultLayout } from '@templates/index'
 import { getProjectsContent } from '@services/projects'
 import { getBannersPpalContent } from '@services/bannersPpal'
 import { getLogoContent } from '@services/logo'
+import { getServicesContent } from '@services/services'
 import { getNumberWpContent } from '@services/numWhatsapp'
 import { IPropsProject } from '@typed/projects'
 import { ILogoData } from '@typed/logo'
+import { IBannerData } from '@typed/banner'
+import { IPropsServices } from '@typed/services'
 import {
   BtnWhatsapp,
   LoadingInitialSite,
@@ -22,7 +25,8 @@ interface IPropsData {
   projects: {
     items: [IPropsProject]
   }
-  bannersPpal: object
+  services: IPropsServices
+  bannersPpal: IBannerData
   logo: ILogoData
   numberWp: {
     number: string
@@ -30,9 +34,7 @@ interface IPropsData {
 }
 
 export default function Home(props: IPropsData) {
-  const { projects, bannersPpal, logo, numberWp } = props
-
-  console.log('bannersPpal', bannersPpal)
+  const { projects, bannersPpal, logo, services, numberWp } = props
 
   const [isLoadingHome, setIsLoadingHome] = useState(true)
 
@@ -51,9 +53,9 @@ export default function Home(props: IPropsData) {
 
   return (
     <DefaultLayout title="IENEL - Home" logo={logo}>
-      <SectionSliderBg />
+      <SectionSliderBg dataBanner={bannersPpal} />
 
-      <Services />
+      <Services dataServices={services} />
 
       {/* <About /> */}
 
@@ -70,11 +72,12 @@ export default function Home(props: IPropsData) {
 
 export const getStaticProps: GetStaticProps<any> = async () => {
   return {
-    // propjects: await getProjectsContent()
+    // projects: await getProjectsContent()
     props: {
       projects: await getProjectsContent(),
       bannersPpal: await getBannersPpalContent(),
       logo: await getLogoContent(),
+      services: await getServicesContent(),
       numberWp: await getNumberWpContent()
     }
   }

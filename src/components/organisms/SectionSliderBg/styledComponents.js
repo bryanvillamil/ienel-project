@@ -26,6 +26,13 @@ export const ContentSlide = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  img {
+    object-position: center;
+    max-height: 100vh;
+    max-width: 100vw;
+    height: 100vh !important;
+    /* object-fit: contain !important; */
+  } 
 `;
 
 export const InfoCarousel = styled.div`
@@ -46,16 +53,17 @@ export const InfoCarousel = styled.div`
     font-size: 40px;
     letter-spacing: 0.5px;
     margin: 0;
-    text-shadow: 3px 3px 3px #b0b0b0;
+    text-shadow: 3px 3px 3px #111;
     text-align: center;
-    color: ${props => props.theme.colors.colorPrimary};
+    /* color: ${props => props.theme.colors.colorPrimary}; */
     color: #111;
+    color: white;
   }
   p {
     font-size: 18px;
     font-weight: 500;
     text-align: center;
-    text-shadow: 3px 3px 3px #333;
+    text-shadow: 3px 3px 3px #111;
     line-height: 1.3;
   }
   ${breakpoint('sm')`

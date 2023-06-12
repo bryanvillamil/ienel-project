@@ -5,6 +5,9 @@ import {
   FaInstagram,
   FaLinkedinIn
 } from 'react-icons/fa'
+import { MdLocationOn } from 'react-icons/md'
+import { BsFillPhoneFill } from 'react-icons/bs'
+
 import { ContainCenter } from '@components/index'
 import { IPNetworks } from '@typed/networks'
 import { ILogoData } from '@typed/logo'
@@ -12,6 +15,7 @@ import {
   FooterCustom,
   FooterContent,
   FooterInfo,
+  FooterInfoBox,
   Networks,
   ContentLogo
 } from './styledComponents'
@@ -62,19 +66,41 @@ export const Footer = (props: IPropsHeader) => {
       <ContainCenter>
         <FooterContent>
           <FooterInfo>
-            <span>{year}</span> <h2>IENEL</h2>
+            <h2>
+              <Image
+                priority
+                style={{ width: 'auto', height: 'auto' }}
+                src={url}
+                alt={title}
+                width={width}
+                height={height}
+              />
+            </h2>
+            <FooterInfoBox>
+              <BsFillPhoneFill size={16} />
+              <span>3207357928 - 3206295069</span>
+            </FooterInfoBox>
+            <FooterInfoBox>
+              <MdLocationOn size={18} />
+              <span>
+                Tv. 41 #80b - 52, Laureles - Laureles, Medellín, Antioquia
+              </span>
+            </FooterInfoBox>
+            <FooterInfoBox>
+              <span>© {year}</span> <p> All rights reserved.</p>
+            </FooterInfoBox>
           </FooterInfo>
 
           {/* Logo */}
           <ContentLogo>
-            <Image
+            {/* <Image
               priority
               style={{ width: 'auto', height: 'auto' }}
               src={url}
               alt={title}
               width={width}
               height={height}
-            />
+            /> */}
           </ContentLogo>
 
           <Networks>

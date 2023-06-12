@@ -7,6 +7,8 @@ export const getBannersPpalContent = async () => {
   });
 
   return {
+    titulo: data?.home?.titulo,
+    description: data?.home?.metaDescripcion,
     banners: data?.home?.bannerPrincipalCollection.items
   }
 }

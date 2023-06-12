@@ -32,6 +32,7 @@ export const FooterInfo = styled.div`
   justify-content: space-between;
   align-items: center;
   order: 3;
+  width: 90%;
   h2 {
     font-size: 18px;
     margin: 0 0 10px 0;
@@ -50,6 +51,7 @@ export const FooterInfo = styled.div`
   ${breakpoint('md')`
     padding: 0 0 0 25px;
     order: 1;
+    width: 100%;
 	`}
 `
 

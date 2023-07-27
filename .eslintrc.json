@@ -27,6 +27,13 @@
           "attributes": false
         }
       }
+    ],
+    "@typescript-eslint/restrict-plus-operands": [
+      "error",
+      {
+        "allowString": true,
+        "allowNumber": true
+      }
     ]
   }
 }

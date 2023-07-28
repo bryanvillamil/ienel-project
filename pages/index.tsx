@@ -40,7 +40,13 @@ interface IPropsData {
   numberWp: {
     number: string
   }
-  googleMap: {}
+  googleMap: {
+    apiKeyMap: string
+    coordenadasGoogle: {
+      lat: number
+      lon: number
+    }
+  }
   contact: IContactContent
   footer: IFooterData
 }

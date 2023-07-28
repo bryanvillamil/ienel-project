@@ -6,10 +6,10 @@ import { getBannersPpalContent } from '@services/bannersPpal'
 import { getLogoContent } from '@services/logo'
 import { getServicesContent } from '@services/services'
 import { getNumberWpContent } from '@services/numWhatsapp'
-import { IPropsProject } from '@typed/projects'
-import { ILogoData } from '@typed/logo'
-import { IBannerData } from '@typed/banner'
-import { IPropsServices } from '@typed/services'
+import { getDataContact } from '@services/contact'
+import { getFooterContent } from '@services/footer'
+import { getMapContent } from '@services/map'
+
 import {
   BtnWhatsapp,
   LoadingInitialSite,
@@ -21,6 +21,15 @@ import {
   Contact
 } from '@components/index'
 
+import {
+  IFooterData,
+  IContactContent,
+  IPropsServices,
+  ILogoData,
+  IBannerData,
+  IPropsProject
+} from '@typed/index'
+
 interface IPropsData {
   projects: {
     items: [IPropsProject]
@@ -31,10 +40,22 @@ interface IPropsData {
   numberWp: {
     number: string
   }
+  googleMap: {}
+  contact: IContactContent
+  footer: IFooterData
 }
 
 export default function Home(props: IPropsData) {
-  const { projects, bannersPpal, logo, services, numberWp } = props
+  const {
+    projects,
+    bannersPpal,
+    logo,
+    services,
+    numberWp,
+    googleMap,
+    contact,
+    footer
+  } = props
 
   const [isLoadingHome, setIsLoadingHome] = useState(true)
 
@@ -52,7 +73,7 @@ export default function Home(props: IPropsData) {
   }
 
   return (
-    <DefaultLayout title="IENEL - Home" logo={logo}>
+    <DefaultLayout title="IENEL - Home" logo={logo} footer={footer}>
       <SectionSliderBg dataBanner={bannersPpal} />
 
       <Services dataServices={services} />
@@ -61,9 +82,9 @@ export default function Home(props: IPropsData) {
 
       <Projects dataProjects={projects} />
 
-      <Location />
+      <Location googleMap={googleMap} />
 
-      <Contact />
+      <Contact dataContact={contact} />
 
       <BtnWhatsapp number={numberWp.number} />
     </DefaultLayout>
@@ -72,13 +93,15 @@ export default function Home(props: IPropsData) {
 
 export const getStaticProps: GetStaticProps<any> = async () => {
   return {
-    // projects: await getProjectsContent()
     props: {
       projects: await getProjectsContent(),
       bannersPpal: await getBannersPpalContent(),
       logo: await getLogoContent(),
       services: await getServicesContent(),
-      numberWp: await getNumberWpContent()
+      numberWp: await getNumberWpContent(),
+      googleMap: await getMapContent(),
+      contact: await getDataContact(),
+      footer: await getFooterContent()
     }
   }
 }

@@ -1,34 +1,30 @@
 import Image from 'next/image'
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedinIn
-} from 'react-icons/fa'
+import { FaFacebookF, FaTwitter } from 'react-icons/fa'
 import { MdLocationOn } from 'react-icons/md'
 import { BsFillPhoneFill } from 'react-icons/bs'
 
 import { ContainCenter } from '@components/index'
 import { IPNetworks } from '@typed/networks'
-import { ILogoData } from '@typed/logo'
+import { ILogoData, IFooterData } from '@typed/index'
 import {
   FooterCustom,
   FooterContent,
   FooterInfo,
   FooterInfoBox,
-  Networks,
-  ContentLogo
+  Networks
 } from './styledComponents'
 
 interface IPropsHeader {
   logo: ILogoData
+  footer: IFooterData
 }
 
 export const Footer = (props: IPropsHeader) => {
   const {
     logo: {
       dataLogo: { url, title, width, height }
-    }
+    },
+    footer
   } = props
 
   const networks: IPNetworks[] = [
@@ -43,18 +39,6 @@ export const Footer = (props: IPropsHeader) => {
       name: 'twitter',
       icon: FaTwitter,
       link: 'https://twitter.com/'
-    },
-    {
-      id: 3,
-      name: 'instagram',
-      icon: FaInstagram,
-      link: 'https://www.instagram.com/'
-    },
-    {
-      id: 4,
-      name: 'linkedin',
-      icon: FaLinkedinIn,
-      link: 'https://www.linkedin.com/'
     }
   ]
 
@@ -78,7 +62,7 @@ export const Footer = (props: IPropsHeader) => {
             </h2>
             <FooterInfoBox>
               <BsFillPhoneFill size={16} />
-              <span>3207357928 - 3206295069</span>
+              <span>{footer.numberContacts}</span>
             </FooterInfoBox>
             <FooterInfoBox>
               <MdLocationOn size={18} />
@@ -90,18 +74,6 @@ export const Footer = (props: IPropsHeader) => {
               <span>© {year}</span> <p> All rights reserved.</p>
             </FooterInfoBox>
           </FooterInfo>
-
-          {/* Logo */}
-          <ContentLogo>
-            {/* <Image
-              priority
-              style={{ width: 'auto', height: 'auto' }}
-              src={url}
-              alt={title}
-              width={width}
-              height={height}
-            /> */}
-          </ContentLogo>
 
           <Networks>
             {networks.map((network: any) => (

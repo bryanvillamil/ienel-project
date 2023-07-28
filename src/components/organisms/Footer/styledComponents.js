@@ -18,11 +18,12 @@ export const FooterCustom = styled.footer`
 export const FooterContent = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   ${breakpoint('md')`
     flex-direction: row;
+    justify-content: space-between;
   `}
 `
 

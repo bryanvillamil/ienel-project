@@ -1,5 +1,5 @@
 import client from '@graphql/client'
-import { GET_ALL_PROYECTS_QUERY } from '@queries/products'
+import { GET_ALL_PROYECTS_QUERY } from '@queries/projects'
 
 export const getProjectsContent = async () => {
   const { data } = await client.query({

@@ -5,8 +5,8 @@ import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import Swal from 'sweetalert2'
 // import emailjs from '@emailjs/browser'
-import Bg from '@images/bg/solar-1.jpg'
 import { Animate, Title } from '@components/index'
+import { IContactContent } from '@typed/contact'
 import {
   ContentContact,
   Description,
@@ -21,13 +21,16 @@ import {
 } from './styledComponents'
 import 'animate.css'
 
-export const Contact = () => {
+export const Contact = ({ dataContact }: { dataContact: IContactContent }) => {
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors }
   } = useForm()
+
+  const { titulo, imgenesPrincipalesCollection, descripcionPrincipal } =
+    dataContact
 
   const sendEmail = async (formData: any) => {
     console.log(formData)
@@ -63,14 +66,18 @@ export const Contact = () => {
         exitAnimation="animate__zoomOut">
         <BoxContact>
           <BoxLeft>
-            <Image src={Bg} alt="bg contact" width={900} height={600} />
+            <Image
+              src={imgenesPrincipalesCollection.items[0].url}
+              alt={imgenesPrincipalesCollection.items[0].title}
+              width={900}
+              height={600}
+            />
           </BoxLeft>
           <BoxRight>
-            <Title type={2} text="Contáctanos" color="#000" align="center" />
+            <Title type={2} text={titulo} color="#000" align="center" />
 
             <Description>
-              ¿Quieres saber más sobre nuestros productos o servicios?
-              Escríbenos y te responderemos lo antes posible.
+              {descripcionPrincipal.json.content[0].content[0].value}
             </Description>
 
             <Form onSubmit={handleSubmit(sendEmail)}>

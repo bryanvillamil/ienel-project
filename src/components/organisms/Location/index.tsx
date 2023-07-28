@@ -2,10 +2,23 @@ import React from 'react'
 import Map from '../../molecules/Map'
 import { ContentLocation } from './styledComponents'
 
-export const Location = () => {
+interface IGoogleMapProps {
+  apiKeyMap: string
+  coordenadasGoogle: {
+    lat: number
+    lon: number
+  }
+}
+
+export const Location = ({ googleMap }: { googleMap: IGoogleMapProps }) => {
+  const { apiKeyMap, coordenadasGoogle } = googleMap
+
   return (
     <ContentLocation name="location" id="location">
-      <Map apiKey={process.env.API_KEY_GOOGLE_MAPS ?? ''} />
+      <Map
+        apiKey={apiKeyMap ?? process.env.API_KEY_GOOGLE_MAPS}
+        coord={coordenadasGoogle}
+      />
     </ContentLocation>
   )
 }

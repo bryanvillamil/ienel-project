@@ -37,16 +37,20 @@ const AnyReactComponent: React.FC<AnyReactComponentProps> = ({ title }) => (
 
 interface MapProps {
   apiKey: string
+  coord: {
+    lat: number
+    lon: number
+  }
 }
 
-const Map: React.FC<MapProps> = ({ apiKey }: MapProps) => {
+const Map: React.FC<MapProps> = ({ apiKey, coord }: MapProps) => {
   const [mapCenter, setMapCenter] = useState<Coords>({
-    lat: 6.24857,
-    lng: -75.60117
+    lat: coord.lat,
+    lng: coord.lon
   })
   const location = {
-    lat: 6.24857,
-    lng: -75.60117,
+    lat: coord.lat,
+    lng: coord.lon,
     text: 'IENEL SAS'
   }
 
@@ -61,7 +65,7 @@ const Map: React.FC<MapProps> = ({ apiKey }: MapProps) => {
   }
 
   return (
-    <ContentMap style={{ height: '400px', width: '100%' }}>
+    <ContentMap style={{ height: '100%', width: '100%' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: apiKey }}
         defaultCenter={defaultProps.center}

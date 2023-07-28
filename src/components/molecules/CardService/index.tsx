@@ -18,7 +18,7 @@ interface ServicesProps {
 export const CardService: React.FC<ServicesProps> = ({ service }) => {
   // const [isFlipped, setIsFlipped] = useState(false)
 
-  console.log('sserviceserviceervice', service)
+  // console.log('sserviceserviceervice', service)
 
   // const handleCardFlipOver = () => {
   //   setIsFlipped(true)

@@ -1,14 +1,8 @@
+import { IDescriptionContent } from '@typed/typesDataContentful'
+
 export interface IPropsProject {
   nombreDelProyecto: string
-  descripcionDelProyecto: {
-    json: {
-      content: [
-        {
-          content: [{ value: string }]
-        }
-      ]
-    }
-  }
+  descripcionDelProyecto: IDescriptionContent
   slug: string
   imagenDelProyectoCollection: {
     items: [

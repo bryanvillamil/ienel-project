@@ -1,24 +1,26 @@
 import { Seo, Header, Footer } from '@components/index'
-import { ILogoData } from '@typed/logo'
+import { ILogoData, IFooterData } from '@typed/index'
 import { Main } from './styledComponent'
 
 interface DefaultLayoutProps {
   children?: JSX.Element[] | JSX.Element | React.ReactNode
   title: string
   logo: ILogoData
+  footer: IFooterData
 }
 
 export default function DefaultLayout({
   children,
   title,
-  logo
+  logo,
+  footer
 }: DefaultLayoutProps) {
   return (
     <>
       <Seo title={title} />
       <Header logo={logo} />
       <Main>{children}</Main>
-      <Footer logo={logo} />
+      <Footer logo={logo} footer={footer} />
     </>
   )
 }

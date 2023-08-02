@@ -13,7 +13,7 @@ export * from './atoms/Paragraph'
 // ----- Molecules
 export * from './molecules/Navbar'
 export * from './molecules/Animate'
-export * from './molecules/Map'
+// export * from './molecules/Map'
 export * from './molecules/CardProject'
 export * from './molecules/CardService'
 
@@ -26,3 +26,4 @@ export * from './organisms/About'
 export * from './organisms/Projects'
 export * from './organisms/Location'
 export * from './organisms/Contact'
+export * from './organisms/FormPqrs'

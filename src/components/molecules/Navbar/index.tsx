@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import { NavItem } from '@components/index'
 import { Menu, NavMenuBar, NavMenuList } from './styledComponents'
 
@@ -13,18 +14,18 @@ const MENU_LIST = [
     text: 'servicios',
     to: 'services'
   },
-  {
-    text: 'sobre nosotros',
-    to: 'about'
-  },
+  // {
+  //   text: 'sobre nosotros',
+  //   to: 'about'
+  // },
   {
     text: 'proyectos',
     to: 'projects'
   },
-  {
-    text: 'cómo llegar',
-    to: 'location'
-  },
+  // {
+  //   text: 'cómo llegar',
+  //   to: 'location'
+  // },
   {
     text: 'contacto',
     to: 'contact'
@@ -59,6 +60,10 @@ export const Navbar: React.FC<INavbar> = ({ navActive, setNavActive }) => {
             </div>
           )
         })}
+
+        <Link href="/pqrs" className="pqrs">
+          PQRs
+        </Link>
       </NavMenuList>
     </Menu>
   )

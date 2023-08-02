@@ -5,13 +5,14 @@ export const FooterCustom = styled.footer`
   position: relative;
   top: -1px;
   display: flex;
-  height: 250px;
+  height: auto;
   width: 100%;
   background: ${(props) => props.theme.colors.colorPrimary};
   background: #111;
   padding: 25px 0;
   ${breakpoint('md')`
     padding: 0;
+    height: 250px;
   `}
 `
 
@@ -32,8 +33,9 @@ export const FooterInfo = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  order: 3;
+  order: 1;
   width: 90%;
+  margin: 30px 0;
   h2 {
     font-size: 18px;
     margin: 0 0 10px 0;
@@ -50,6 +52,7 @@ export const FooterInfo = styled.div`
     }
   }  
   ${breakpoint('md')`
+    margin: 0px;
     padding: 0 0 0 25px;
     order: 1;
     width: 100%;
@@ -61,19 +64,33 @@ export const FooterInfoBox = styled.div`
   align-items: center;
   font-weight: 400;
   width: 100%;
-  height: 30px;
+  height: 50px;
   svg {
     position: relative;
     right: 5px;
   }
-  span {
+  span, a {
     color: #fff;
     font-size: 14px;
+  }
+  a {
+    transition: all 1s ease;
+    display: flex;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
   p {
     margin-left: 10px;
     font-size: 13px;
   }
+
+  ${breakpoint('sm')`
+    height: 40px;
+	`}
+  ${breakpoint('md')`
+    height: 30px;
+	`}
 `;
 
 

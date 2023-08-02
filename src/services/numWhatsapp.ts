@@ -6,7 +6,5 @@ export const getNumberWpContent = async () => {
     query: GET_NUMBER_WHATSAPP_QUERY
   });
 
-  return {
-    number: data?.home?.numeroDeWhatsApp
-  }
+  return data?.home?.numeroDeWhatsApp
 }

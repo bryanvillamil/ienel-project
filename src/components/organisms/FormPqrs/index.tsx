@@ -1,11 +1,9 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import React from 'react'
-import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import Swal from 'sweetalert2'
-import emailjs from '@emailjs/browser'
+// import emailjs from '@emailjs/browser'
 import { Animate, Title } from '@components/index'
 import { IContactContent } from '@typed/contact'
 import {
@@ -17,12 +15,11 @@ import {
   Label,
   BtnSubmit,
   Error,
-  BoxLeft,
   BoxRight
 } from './styledComponents'
 import 'animate.css'
 
-export const Contact = ({ dataContact }: { dataContact: IContactContent }) => {
+export const FormPqrs = ({ dataContact }: { dataContact: IContactContent }) => {
   const {
     register,
     handleSubmit,
@@ -30,8 +27,7 @@ export const Contact = ({ dataContact }: { dataContact: IContactContent }) => {
     formState: { errors }
   } = useForm()
 
-  const { titulo, imgenesPrincipalesCollection, descripcionPrincipal } =
-    dataContact
+  // const { descripcionPrincipal } = dataContact
 
   const sendEmail = async (formData: any) => {
     console.log(formData)
@@ -42,26 +38,22 @@ export const Contact = ({ dataContact }: { dataContact: IContactContent }) => {
     )
     reset()
 
-    emailjs
-      .send(
-        'service_zbnx1jr',
-        'template_j0h4sm4',
-        formData,
-        '8oQUMfpdxRYvgcVPU' // api key
-      )
-      .then((resp) => {
-        console.log('Success!', resp)
-        Swal.fire(
-          '¡Gracias!',
-          'Tu mensaje ha sido enviado correctamente.',
-          'success'
-        )
-        reset()
-      })
-      .catch((err) => {
-        console.error('Failed...', err)
-        Swal.fire('¡Uupps, Error!', 'Tu mensaje no pudo ser enviado.', 'error')
-      })
+    // emailjs
+    //     .send(
+    //       "service_h6ceosv",
+    //       "template_7967x7g",
+    //       formData,
+    //       "8w2P9Wvy37sZ2KYly"
+    //     )
+    //     .then((resp) => {
+    //         console.log("Success!", resp);
+    //         Swal.fire('¡Gracias!', 'Tu mensaje ha sido enviado correctamente.', "success");
+    //         reset();
+    //     })
+    //     .catch((err) => {
+    //         console.error("Failed...", err);
+    //         Swal.fire('¡Uupps, Error!', 'Tu mensaje no pudo ser enviado.', "error");
+    //     });
   }
 
   return (
@@ -70,19 +62,19 @@ export const Contact = ({ dataContact }: { dataContact: IContactContent }) => {
         entranceAnimation="animate__zoomIn"
         exitAnimation="animate__zoomOut">
         <BoxContact>
-          <BoxLeft>
-            <Image
-              src={imgenesPrincipalesCollection.items[0].url}
-              alt={imgenesPrincipalesCollection.items[0].title}
-              width={900}
-              height={600}
-            />
-          </BoxLeft>
           <BoxRight>
-            <Title type={2} text={titulo} color="#000" align="center" />
+            <Title type={2} text="PQRs" color="#000" align="center" />
 
             <Description>
-              {descripcionPrincipal.json.content[0].content[0].value}
+              Bienvenido a nuestra sección de PQRs, donde tu opinión es
+              importante para nosotros. Aquí puedes presentar tus Peticiones,
+              realizar Quejas o plantear Reclamos sobre nuestros productos,
+              servicios o cualquier aspecto relacionado con nuestra empresa.
+              Nuestro objetivo es brindarte una atención personalizada y
+              resolver tus inquietudes de manera efectiva y oportuna. Utiliza
+              este formulario para hacernos saber cómo podemos mejorar y
+              brindarte una experiencia excepcional. Agradecemos tu colaboración
+              para seguir creciendo juntos.
             </Description>
 
             <Form onSubmit={handleSubmit(sendEmail)}>

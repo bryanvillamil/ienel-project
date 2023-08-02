@@ -8,7 +8,7 @@ import { getServicesContent } from '@services/services'
 import { getNumberWpContent } from '@services/numWhatsapp'
 import { getDataContact } from '@services/contact'
 import { getFooterContent } from '@services/footer'
-import { getMapContent } from '@services/map'
+// import { getMapContent } from '@services/map'
 
 import {
   BtnWhatsapp,
@@ -17,7 +17,7 @@ import {
   Services,
   Projects,
   // About,
-  Location,
+  // Location,
   Contact
 } from '@components/index'
 
@@ -37,9 +37,7 @@ interface IPropsData {
   services: IPropsServices
   bannersPpal: IBannerData
   logo: ILogoData
-  numberWp: {
-    number: string
-  }
+  numberWp: string
   googleMap: {
     apiKeyMap: string
     coordenadasGoogle: {
@@ -58,7 +56,7 @@ export default function Home(props: IPropsData) {
     logo,
     services,
     numberWp,
-    googleMap,
+    // googleMap,
     contact,
     footer
   } = props
@@ -79,7 +77,11 @@ export default function Home(props: IPropsData) {
   }
 
   return (
-    <DefaultLayout title="IENEL - Home" logo={logo} footer={footer}>
+    <DefaultLayout
+      title="IENEL - Home"
+      logo={logo}
+      footer={footer}
+      isHeaderMenu>
       <SectionSliderBg dataBanner={bannersPpal} />
 
       <Services dataServices={services} />
@@ -88,11 +90,11 @@ export default function Home(props: IPropsData) {
 
       <Projects dataProjects={projects} />
 
-      <Location googleMap={googleMap} />
+      {/* <Location googleMap={googleMap} /> */}
 
       <Contact dataContact={contact} />
 
-      <BtnWhatsapp number={numberWp.number} />
+      <BtnWhatsapp number={numberWp} />
     </DefaultLayout>
   )
 }
@@ -105,7 +107,7 @@ export const getStaticProps: GetStaticProps<any> = async () => {
       logo: await getLogoContent(),
       services: await getServicesContent(),
       numberWp: await getNumberWpContent(),
-      googleMap: await getMapContent(),
+      // googleMap: await getMapContent(),
       contact: await getDataContact(),
       footer: await getFooterContent()
     }

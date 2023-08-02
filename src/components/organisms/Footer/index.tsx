@@ -65,10 +65,12 @@ export const Footer = (props: IPropsHeader) => {
               <span>{footer.numberContacts}</span>
             </FooterInfoBox>
             <FooterInfoBox>
-              <MdLocationOn size={18} />
-              <span>
+              <a
+                href="https://www.google.com/maps/place/Tv.+41+%23+80B-46,+Laureles+-+Estadio,+Medell%C3%ADn,+Laureles,+Medell%C3%ADn,+Antioquia/@6.2486152,-75.6015296,19.32z/data=!4m14!1m7!3m6!1s0x8e44299e30b1169f:0x19926709698249a8!2sTv.+41+%2380b-52,+Laureles+-+Estadio,+Medell%C3%ADn,+Laureles,+Medell%C3%ADn,+Antioquia!3b1!8m2!3d6.2485236!4d-75.6011698!3m5!1s0x8e44299e3a81acdf:0xd602627864ff1681!8m2!3d6.2486097!4d-75.6011899!16s%2Fg%2F11j3mgflbw?hl=es&entry=ttu"
+                target="blank">
+                <MdLocationOn size={18} />
                 Tv. 41 #80b - 52, Laureles - Laureles, Medellín, Antioquia
-              </span>
+              </a>
             </FooterInfoBox>
             <FooterInfoBox>
               <span>© {year}</span> <p> All rights reserved.</p>

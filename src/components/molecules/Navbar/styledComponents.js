@@ -68,6 +68,37 @@ export const NavMenuList = styled.div`
     }
   }
 
+  a.pqrs {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px; 
+    position: relative;
+    transition: all 0.5s;
+    color: ${props => props.theme.colors.colorPrimary};
+    text-decoration: none;
+    text-transform: capitalize;
+    position: relative;
+    
+    &:hover:before {
+      width: 100%;
+    }
+
+    &:before { 
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 100%;
+      bottom: 0px;
+      left: 0;
+      background-color: ${props => props.theme.colors.colorPrimary};
+      transition: all 0.5s;
+      z-index: -1;
+    }
+  }
+
   ${breakpoint('md')`
     row-gap: 24px;
     padding: 24px 16px;
@@ -78,11 +109,32 @@ export const NavMenuList = styled.div`
     column-gap: 24px;
     align-items: center;
     box-shadow: none;
+
+    a.pqrs {
+      font-size: 15px; 
+      justify-content: space-between;
+      padding: 0;
+      
+      &:before { 
+        height: 4px;
+        bottom: -12px;
+        left: 0;
+        background-color: #333;
+        transition: all 0.5s;
+      }
+    }
+    
     div {
       border: none;
       &:first-child {
         border: none;
       }
+    }
+	`}
+
+${breakpoint('lg')`
+    a.pqrs {
+      font-size: 18px; 
     }
 	`}
 `;

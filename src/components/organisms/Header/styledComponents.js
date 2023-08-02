@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { CustomButton } from '@components/atoms/Button/styledComponents'
 import { breakpoint } from 'styled-components-breakpoint';
 
 export const HeaderCustom = styled.header`
@@ -63,5 +64,17 @@ export const HeaderMenu = styled.div`
 	transition: all 0.5s ease;
 	${breakpoint('md')`
 		order: 2;
+	`}
+`;
+
+export const ButtonVisited = styled(CustomButton)`
+	color: #fff;
+	text-decoration: none;
+	font-size: 14px;
+	width: 80px;
+	margin: 0 25px 0 0;
+	display: none;
+	${breakpoint('md')`
+		display: flex;
 	`}
 `;

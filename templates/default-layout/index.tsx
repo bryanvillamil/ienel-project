@@ -7,18 +7,20 @@ interface DefaultLayoutProps {
   title: string
   logo: ILogoData
   footer: IFooterData
+  isHeaderMenu: boolean
 }
 
 export default function DefaultLayout({
   children,
   title,
   logo,
-  footer
+  footer,
+  isHeaderMenu
 }: DefaultLayoutProps) {
   return (
     <>
       <Seo title={title} />
-      <Header logo={logo} />
+      <Header logo={logo} isHeaderMenu={isHeaderMenu} />
       <Main>{children}</Main>
       <Footer logo={logo} footer={footer} />
     </>

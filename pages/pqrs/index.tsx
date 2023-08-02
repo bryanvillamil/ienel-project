@@ -16,7 +16,7 @@ import {
   ContainerPqrs,
   ContentBackHome,
   ContentFormPqrs
-} from './styledComponents'
+} from '@styles/styledPQRs'
 
 interface IPropsData {
   numberWp: string
@@ -25,7 +25,7 @@ interface IPropsData {
   footer: IFooterData
 }
 
-export default function Pqrs(props: IPropsData) {
+const Pqrs = (props: IPropsData) => {
   const { logo, footer, numberWp, contact } = props
   return (
     <DefaultLayout
@@ -50,6 +50,8 @@ export default function Pqrs(props: IPropsData) {
     </DefaultLayout>
   )
 }
+
+export default Pqrs
 
 export const getStaticProps: GetStaticProps<any> = async () => {
   return {

@@ -22,8 +22,8 @@ export const Services = ({
         <InfoServices>
           <Title
             type={2}
-            text="Nuestros servicios"
-            color="#000"
+            text="Nuestros Servicios"
+            color="#1B1918"
             align="center"
           />
           <ServicesCards>

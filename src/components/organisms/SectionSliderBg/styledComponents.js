@@ -50,13 +50,13 @@ export const InfoCarousel = styled.div`
   height: 85%;
   z-index: 1;
   h2 {
-    font-size: 40px;
+    font-size: 50px;
     letter-spacing: 0.5px;
     margin: 0;
     text-shadow: 3px 3px 3px #111;
     text-align: center;
     /* color: ${props => props.theme.colors.colorPrimary}; */
-    color: #111;
+    color: #1B1918;
     color: white;
   }
   p {
@@ -74,12 +74,22 @@ export const InfoCarousel = styled.div`
     width: 600px;
     height: 300px;
     h2 {
-      font-size: 45px;
+      font-size: 60px;
       letter-spacing: 1px;
     }
     p {
       font-size: 16px;
       line-height: 1.5;
+    }
+  `}
+  ${breakpoint('lg')`
+    h2 {
+      font-size: 70px;
+    }
+  `}
+  ${breakpoint('xl')`
+    h2 {
+      font-size: 80px;
     }
   `}
 `;
@@ -89,7 +99,7 @@ export const InfoCarouselButton = styled(LinkHRef)`
   display: flex;
   cursor: pointer;
   padding: 12px 15px;
-  background: ${props => props.theme.colors.colorPrimary};
+  background: ${props => props.theme.colors.colorSecondary};
   transition: all 0.5s ease;
   border-radius: 5px;
   margin-top: 20px;
@@ -103,8 +113,7 @@ export const InfoCarouselButton = styled(LinkHRef)`
     transform: scale(1.1);
   }
   ${breakpoint('md')`
-    width: 100px;
-    padding: 10px 15px;
+    width: 110px;
     margin-top: 10px;
   `}
 `;

@@ -9,9 +9,10 @@ export const theme = {
     /* Azul: #0E73FC; */
     /* verde 8: #439B31; */
     colorPrimary: '#5e5e5e',
-    colorSecondary: '#0E73FC',
+    colorSecondary: '#E30016',
     colorBgLoading: '#439B31',
     white: '#fff',
+    black: '#1B1918',
     dark: '#333'
   },
   // fonts: ["sans-serif", "Roboto"],

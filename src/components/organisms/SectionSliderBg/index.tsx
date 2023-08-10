@@ -42,10 +42,9 @@ export const SectionSliderBg = ({
                     <Image
                       src={image.url}
                       alt={image.description || 'alt image'}
-                      width={image.width}
-                      height={image.height}
                       priority
-                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33.33vw"
+                      width={1980}
+                      height={1200}
                       style={{ objectFit: 'cover' }}
                     />
                   </ContentSlide>

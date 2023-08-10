@@ -69,6 +69,9 @@ export const BoxRight = styled.div`
   flex-direction: column;
   padding: 0 20px;
   margin-top: 30px;
+  h2 {
+    margin-bottom: 10px;
+  }
   ${breakpoint('md')`
     margin-top: 0;
 	`}
@@ -192,7 +195,7 @@ export const BtnSubmit = styled(Row)`
     display: flex;
     cursor: pointer;
     padding: 12px 15px;
-    background: ${props => props.theme.colors.colorPrimary};
+    background: ${props => props.theme.colors.colorSecondary};
     transition: all 0.5s ease;
     border-radius: 5px;
     margin-top: 20px;
@@ -210,8 +213,7 @@ export const BtnSubmit = styled(Row)`
       transform: scale(1.1);
     }
     ${breakpoint('md')`
-      width: 100px;
-      padding: 10px 15px;
+      width: 110px;
       margin-top: 10px;
     `}
   }

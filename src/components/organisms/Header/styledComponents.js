@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Image from 'next/image'
 import { CustomButton } from '@components/atoms/Button/styledComponents'
 import { breakpoint } from 'styled-components-breakpoint';
 
@@ -11,10 +12,17 @@ export const HeaderCustom = styled.header`
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 	transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 	height: 80px;
-	background: #fff;
 	${breakpoint('md')`
 		height: 80px;
 	`}
+`;
+
+export const WatermarkContainer = styled(Image)`
+	z-index: -1;
+  position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
 `;
 
 
@@ -48,10 +56,10 @@ export const ContentLogo = styled.h1`
 	img {
 		/* display: flex; */
 		/* object-fit: contain; */
-		width: 100px;
-		max-width: 100px;
+		width: 120px;
+		max-width: 115px;
 		height: 32px;
-		/* aspect-ratio: 4/1; */
+		/* aspect-ratio: 3/1; */
 	}
 `;
 
@@ -71,9 +79,16 @@ export const ButtonVisited = styled(CustomButton)`
 	color: #fff;
 	text-decoration: none;
 	font-size: 14px;
-	width: 80px;
+	width: 85px;
 	margin: 0 25px 0 0;
 	display: none;
+	svg {
+		left: 4px;
+		position: relative;
+	}
+	&:hover {
+		background: ${props => props.theme.colors.colorSecondary};
+	}
 	${breakpoint('md')`
 		display: flex;
 	`}

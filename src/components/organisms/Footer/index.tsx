@@ -2,16 +2,17 @@ import Image from 'next/image'
 import { FaFacebookF, FaTwitter } from 'react-icons/fa'
 import { MdLocationOn } from 'react-icons/md'
 import { BsFillPhoneFill } from 'react-icons/bs'
+import { IoDocumentText, IoDocument } from 'react-icons/io5'
 
 import { ContainCenter } from '@components/index'
-import { IPNetworks } from '@typed/networks'
 import { ILogoData, IFooterData } from '@typed/index'
 import {
   FooterCustom,
   FooterContent,
   FooterInfo,
   FooterInfoBox,
-  Networks
+  Networks,
+  FooterPrivacy
 } from './styledComponents'
 
 interface IPropsHeader {
@@ -27,20 +28,12 @@ export const Footer = (props: IPropsHeader) => {
     footer
   } = props
 
-  const networks: IPNetworks[] = [
-    {
-      id: 1,
-      name: 'facebook',
-      icon: FaFacebookF,
-      link: 'https://www.facebook.com/'
-    },
-    {
-      id: 2,
-      name: 'twitter',
-      icon: FaTwitter,
-      link: 'https://twitter.com/'
-    }
-  ]
+  const { numberContacts, socialNetworks } = footer
+
+  const ICONOS: any = {
+    facebook: FaFacebookF,
+    twitter: FaTwitter
+  }
 
   const today = new Date()
   const year = today.getFullYear()
@@ -62,7 +55,7 @@ export const Footer = (props: IPropsHeader) => {
             </h2>
             <FooterInfoBox>
               <BsFillPhoneFill size={16} />
-              <span>{footer.numberContacts}</span>
+              <span>{numberContacts}</span>
             </FooterInfoBox>
             <FooterInfoBox>
               <a
@@ -77,16 +70,34 @@ export const Footer = (props: IPropsHeader) => {
             </FooterInfoBox>
           </FooterInfo>
 
+          <FooterPrivacy>
+            <a
+              href="/pdfs/politica-de-tratamiento-de-datos.pdf"
+              target="_blank"
+              rel="noopener noreferrer">
+              <IoDocumentText size={16} /> Politica de tratamiento de datos
+            </a>
+            <a
+              href="/pdfs/politica-del-sistema-integrado-de-gestion.pdf"
+              target="_blank"
+              rel="noopener noreferrer">
+              <IoDocument size={16} /> Politica del Sistema Integrado de Gestion
+            </a>
+          </FooterPrivacy>
+
           <Networks>
-            {networks.map((network: any) => (
-              <a
-                key={network.id}
-                href={network.link}
-                target="_blank"
-                rel="noreferrer">
-                <network.icon size={25} />
-              </a>
-            ))}
+            {socialNetworks.map((network: any, idx) => {
+              const Ico = ICONOS[network.nombreIcono]
+              return (
+                <a
+                  key={idx}
+                  href={network.enlacePrincipal}
+                  target="_blank"
+                  rel="noreferrer">
+                  <Ico size={25} />
+                </a>
+              )
+            })}
           </Networks>
         </FooterContent>
       </ContainCenter>

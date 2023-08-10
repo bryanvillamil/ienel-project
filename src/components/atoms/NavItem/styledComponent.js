@@ -16,6 +16,7 @@ export const LinkCustomHRef = styled(LinkHRef)`
   text-decoration: none;
   text-transform: capitalize;
   padding: 20px 0;
+  white-space: nowrap;
   &:hover,
   &.active {
     font-weight: bold;
@@ -34,9 +35,19 @@ export const LinkCustomHRef = styled(LinkHRef)`
     height: 100%;
     bottom: 0px;
     left: 0;
-    background-color: ${props => props.theme.colors.colorPrimary};
     transition: all 0.5s;
     z-index: -1;
+  }
+
+  &.odd {
+    &:before {
+      background-color: ${props => props.theme.colors.colorSecondary};
+    }
+  }
+  &.even {
+    &:before {
+      background-color: ${props => props.theme.colors.black};
+    }
   }
 
   ${breakpoint('md')`

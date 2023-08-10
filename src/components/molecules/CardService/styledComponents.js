@@ -1,95 +1,110 @@
 import styled from 'styled-components'
 import { breakpoint } from 'styled-components-breakpoint'
 
-export const CardContainer = styled.div`
-  perspective: 1000px;
-  transition: all 0.8s ease;
-  position: relative;
-  width: 100%;
-  height: 100%;
-`
+// export const CardContainer = styled.div`
+//   perspective: 1000px;
+//   transition: all 0.8s ease;
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+// `
 
-export const CardFront = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: calc(100%);
-  height: calc(100%);
-  backface-visibility: hidden;
-  /* background-color: #f1f1f1; */
-  transform: ${(props) => (props.flipped ? 'rotateY(180deg)' : 'none')};
-  transition: transform 0.6s ease;
-`
+// export const CardFront = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   position: absolute;
+//   width: calc(100%);
+//   height: calc(100%);
+//   backface-visibility: hidden;
+//   /* background-color: #f1f1f1; */
+//   transform: ${(props) => (props.flipped ? 'rotateY(180deg)' : 'none')};
+//   transition: transform 0.6s ease;
+// `
 
-export const CardBack = styled.div`
-  /* background-color: ${(props) => props.theme.colors.colorPrimary}; */
-  transform: rotateY(180deg);
-  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-  border-radius: 10px;
+// export const CardBack = styled.div`
+//   /* background-color: ${(props) => props.theme.colors.colorPrimary}; */
+//   transform: rotateY(180deg);
+//   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+//   border-radius: 10px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   position: absolute;
+//   width: calc(100%);
+//   height: calc(100%);
+//   backface-visibility: hidden;
+//   transform: ${(props) => (props.flipped ? 'none' : 'rotateY(180deg)')};
+//   transition: transform 0.6s ease;
+//   p {
+//     max-width: 90%;
+//   }
+// `
+
+
+// export const Card = styled.div`
+//   width: 180px;
+//   height: 180px;
+//   perspective: 1000px;
+//   position: relative;
+//   &:before {
+//     content '';
+//     display: flex;
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     width: 45%;
+//     height: 2px;
+//     background: #333;
+//     margin: 0 auto;
+//     transition: all 0.5s ease-in-out;
+//   }
+//   &:hover {
+//     &:before {
+//       width: 50%;
+//     }
+//   }
+//   &:hover ${CardFront} {
+//     transform: rotateY(180deg);
+//   }
+//   &:hover ${CardBack} {
+//     transform: rotateY(0deg);
+//   }
+//   ${breakpoint('xxs')`
+//     width: 150px;
+//     height: 80px;
+// 	`}
+//   ${breakpoint('sm')`
+//     height: 180px;
+// 	`}
+//   ${breakpoint('md')`
+//     height: 100px;
+// 	`}
+//   ${breakpoint('lg')`
+//     width: 170px;
+//     height: 140px;
+//     &:before {
+//       width: 20%;
+//     }
+// 	`}
+//   ${breakpoint('xl')`
+//     width: 200px;
+// 	`}
+// `
+
+export const BoxImage = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: calc(100%);
-  height: calc(100%);
-  backface-visibility: hidden;
-  transform: ${(props) => (props.flipped ? 'none' : 'rotateY(180deg)')};
-  transition: transform 0.6s ease;
-  p {
-    max-width: 90%;
-  }
-`
-export const Card = styled.div`
-  width: 180px;
+  width: 200px;
   height: 180px;
-  perspective: 1000px;
   position: relative;
-  &:before {
-    content '';
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 45%;
-    height: 2px;
-    background: #333;
-    margin: 0 auto;
-    transition: all 0.5s ease-in-out;
-  }
-  &:hover {
-    &:before {
-      width: 50%;
-    }
-  }
-  &:hover ${CardFront} {
-    transform: rotateY(180deg);
-  }
-  &:hover ${CardBack} {
-    transform: rotateY(0deg);
-  }
-  ${breakpoint('xxs')`
-    width: 150px;
-    height: 80px;
-	`}
-  ${breakpoint('sm')`
-    height: 180px;
-	`}
-  ${breakpoint('md')`
-    height: 100px;
-	`}
+  transition: transform 0.7s ease;
   ${breakpoint('lg')`
-    width: 170px;
-    height: 140px;
-    &:before {
-      width: 20%;
-    }
+    width: 250px;
+    height: 200px;
 	`}
-  ${breakpoint('xl')`
-    width: 200px;
-	`}
-`
+`;
+
 
 export const Text = styled.div`
   width: 100%;
@@ -103,8 +118,7 @@ export const Text = styled.div`
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     padding: 10px 0 12px;
-    
-    
+    line-height: 1.5;
   }
   ${breakpoint('md')`
     h3 {
@@ -139,14 +153,18 @@ export const Container = styled.div`
       color: ${(props) => props.theme.colors.colorPrimary};
     }
   }
-  ${breakpoint('xxs')`
-    width: 48%;
+  &:hover ${BoxImage} {
+    transform: scale(1.2);
+  }
+
+  ${breakpoint('xs')`
+    width: 380px;
 	`}
   ${breakpoint('sm')`
-    height: 220px;
+    width: 48%;
+    height: auto;
 	`}
   ${breakpoint('lg')`
     width: 33.333%;
-    height: 200px;
 	`}
 `

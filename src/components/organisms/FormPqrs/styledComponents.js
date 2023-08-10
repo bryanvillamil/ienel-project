@@ -56,10 +56,9 @@ export const Description = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   color: #000;
+  text-align: justify;
   ${breakpoint('sm')`
-		text-align: initial;
     margin-bottom: 35px;
 	`}
   ${breakpoint('lg')`
@@ -162,7 +161,7 @@ export const BtnSubmit = styled(Row)`
     display: flex;
     cursor: pointer;
     padding: 12px 15px;
-    background: ${props => props.theme.colors.colorPrimary};
+    background: ${props => props.theme.colors.colorSecondary};
     transition: all 0.5s ease;
     border-radius: 5px;
     margin-top: 20px;
@@ -180,8 +179,7 @@ export const BtnSubmit = styled(Row)`
       transform: scale(1.1);
     }
     ${breakpoint('md')`
-      width: 100px;
-      padding: 10px 15px;
+      width: 110px;
       margin-top: 10px;
     `}
   }

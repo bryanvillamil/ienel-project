@@ -54,7 +54,6 @@ export const NavMenuList = styled.div`
   padding: 0;
   transition: all 0.2s;
   min-height: calc(100vh - 60px);
-  background-color: #fff;
   z-index: 999;
   box-shadow: 8px 0px 8px -8px rgba(0, 0, 0, 0.5);
 	transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);

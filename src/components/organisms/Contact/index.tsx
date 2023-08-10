@@ -118,7 +118,7 @@ export const Contact = ({ dataContact }: { dataContact: IContactContent }) => {
               </Row>
 
               <Row className="phone">
-                <Label htmlFor="number">Telefono</Label>
+                <Label htmlFor="phone">Telefono</Label>
                 <input
                   type="number"
                   id="phone"

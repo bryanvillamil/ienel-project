@@ -88,8 +88,9 @@ export const Contact = ({ dataContact }: { dataContact: IContactContent }) => {
 
             <Form onSubmit={handleSubmit(sendEmail)}>
               <Row className="name">
-                <Label>Nombre Completo</Label>
+                <Label htmlFor="name">Nombre Completo</Label>
                 <input
+                  id="name"
                   className={errors.phone && 'field-error'}
                   {...register('name', { required: true })}
                   placeholder=""
@@ -100,8 +101,9 @@ export const Contact = ({ dataContact }: { dataContact: IContactContent }) => {
               </Row>
 
               <Row className="email">
-                <Label>Email</Label>
+                <Label htmlFor="email">Email</Label>
                 <input
+                  id="email"
                   className={errors.phone && 'field-error'}
                   {...register('email', {
                     required: true,
@@ -116,15 +118,21 @@ export const Contact = ({ dataContact }: { dataContact: IContactContent }) => {
               </Row>
 
               <Row className="phone">
-                <Label>Telefono</Label>
-                <input type="number" {...register('phone')} placeholder="" />
+                <Label htmlFor="number">Telefono</Label>
+                <input
+                  type="number"
+                  id="phone"
+                  {...register('phone')}
+                  placeholder=""
+                />
               </Row>
 
               <Row className="message">
-                <Label>Mensaje</Label>
+                <Label htmlFor="message">Mensaje</Label>
                 <textarea
                   rows={8}
-                  className={errors.phone && 'field-error'}
+                  id="message"
+                  className={errors.message && 'field-error'}
                   {...register('message', { required: true })}
                   placeholder=""
                 />

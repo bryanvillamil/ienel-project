@@ -15,8 +15,6 @@ import BgAbout from '@assets/img/logo-clavija.png'
 import 'animate.css'
 
 export const About = ({ dataAbout }: { dataAbout: IAboutData }) => {
-  console.log('dataAboutdataAbout', dataAbout)
-
   const {
     quienesSomos: {
       titleMision,

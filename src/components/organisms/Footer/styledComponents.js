@@ -43,9 +43,9 @@ export const FooterInfo = styled.div`
       display: flex;
       object-fit: contain;
       width: 100%;
-      max-width: 80px;
+      max-width: 100px;
       height: 100%;
-      padding: 5px;
+      padding: 3px;
       background: #fff;
       border-radius: 4px;
       filter: drop-shadow(5px 4px 4px #333);
@@ -55,7 +55,7 @@ export const FooterInfo = styled.div`
     margin: 0px;
     padding: 0 0 0 25px;
     order: 1;
-    width: 100%;
+    width: 50%;
 	`}
 `
 
@@ -95,7 +95,6 @@ export const FooterInfoBox = styled.div`
 
 
 
-
 export const ContentLogo = styled.div`
   display: flex;
   justify-content: center;
@@ -121,6 +120,29 @@ export const ContentLogo = styled.div`
 		}
 	`}
 `
+export const FooterPrivacy = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px 35px;
+  order: 2;
+  width: 90%;
+  a {
+    text-decoration: none;
+    font-weight: 400;
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      color: ${(props) => props.theme.colors.colorSecondary};
+    }
+  }
+  ${breakpoint('md')`
+    order: 3;
+    gap: 20px;
+    width: 40%;
+	`}
+`
 
 export const Networks = styled.div`
   display: flex;
@@ -128,6 +150,8 @@ export const Networks = styled.div`
   align-items: center;
   gap: 20px 35px;
   order: 2;
+  width: 15%;
+  margin-top: 40px;
   a {
     text-decoration: none;
     color: #fff;

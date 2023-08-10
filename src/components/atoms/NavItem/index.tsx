@@ -6,12 +6,14 @@ export const NavItem = ({
   to,
   text,
   active,
+  className,
   setNavActive
 }: {
   text: string
   active: boolean
   href?: string
   to: string
+  className: string
   setNavActive: (value: boolean) => void
 }) => {
   return (
@@ -21,7 +23,7 @@ export const NavItem = ({
       smooth={true}
       duration={800}
       offset={-100}
-      className={`${active ? 'active' : ''}`}
+      className={`${active ? 'active ' : ''} ${className}`}
       onSetActive={() => setNavActive(false)}>
       {text}
     </LinkCustomHRef>

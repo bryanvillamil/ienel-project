@@ -1,12 +1,14 @@
 // import { useState } from 'react'
 import { Title } from '@components/index' // Paragraph
+import Image from 'next/image'
 import {
   // Card,
   Container,
   // CardContainer,
   // CardFront,
   // CardBack,
-  Text
+  Text,
+  BoxImage
 } from './styledComponents'
 import { IService } from '@typed/services'
 
@@ -18,14 +20,15 @@ interface ServicesProps {
 export const CardService: React.FC<ServicesProps> = ({ service }) => {
   // const [isFlipped, setIsFlipped] = useState(false)
 
-  // console.log('sserviceserviceervice', service)
-
   // const handleCardFlipOver = () => {
   //   setIsFlipped(true)
   // }
   // const handleCardFlipLeave = () => {
   //   setIsFlipped(false)
   // }
+
+  const { imgenesPrincipalesCollection } = service
+
   return (
     <Container>
       {/* <Card>
@@ -47,6 +50,18 @@ export const CardService: React.FC<ServicesProps> = ({ service }) => {
           </CardBack>
         </CardContainer>
       </Card> */}
+
+      {imgenesPrincipalesCollection.items.length > 0 && (
+        <BoxImage>
+          <Image
+            src={imgenesPrincipalesCollection.items[0].url}
+            fill
+            style={{ objectFit: 'contain' }}
+            alt={imgenesPrincipalesCollection.items[0].title}
+            sizes="(max-width: 640px) 220px, (max-width: 768px) 250px"
+          />
+        </BoxImage>
+      )}
       <Text style={{ marginTop: '15px' }}>
         {/* <Paragraph
           text={service.nombreDelServicio}

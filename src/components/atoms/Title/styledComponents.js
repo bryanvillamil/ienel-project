@@ -23,8 +23,19 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
   font-size: 30px;
   line-height: 1.5;
-  width: 100%;
+  width: max-content;
   margin: 0;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: ${(props) => props.theme.colors.colorSecondary}
+  }
   ${breakpoint('md')`
     font-size: 30px;
   `}

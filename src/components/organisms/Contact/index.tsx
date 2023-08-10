@@ -74,8 +74,9 @@ export const Contact = ({ dataContact }: { dataContact: IContactContent }) => {
             <Image
               src={imgenesPrincipalesCollection.items[0].url}
               alt={imgenesPrincipalesCollection.items[0].title}
-              width={900}
-              height={600}
+              width={1980}
+              height={1200}
+              style={{ objectFit: 'cover' }}
             />
           </BoxLeft>
           <BoxRight>

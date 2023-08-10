@@ -4,6 +4,7 @@ import { DefaultLayout } from '@templates/index'
 import { getProjectsContent } from '@services/projects'
 import { getBannersPpalContent } from '@services/bannersPpal'
 import { getLogoContent } from '@services/logo'
+import { getAboutUsContent } from '@services/aboutUs'
 import { getServicesContent } from '@services/services'
 import { getNumberWpContent } from '@services/numWhatsapp'
 import { getDataContact } from '@services/contact'
@@ -16,7 +17,7 @@ import {
   SectionSliderBg,
   Services,
   Projects,
-  // About,
+  About,
   // Location,
   Contact
 } from '@components/index'
@@ -26,6 +27,7 @@ import {
   IContactContent,
   IPropsServices,
   ILogoData,
+  IAboutData,
   IBannerData,
   IPropsProject
 } from '@typed/index'
@@ -38,6 +40,7 @@ interface IPropsData {
   bannersPpal: IBannerData
   logo: ILogoData
   numberWp: string
+  aboutUs: IAboutData
   googleMap: {
     apiKeyMap: string
     coordenadasGoogle: {
@@ -56,6 +59,7 @@ export default function Home(props: IPropsData) {
     logo,
     services,
     numberWp,
+    aboutUs,
     // googleMap,
     contact,
     footer
@@ -86,7 +90,7 @@ export default function Home(props: IPropsData) {
 
       <Services dataServices={services} />
 
-      {/* <About /> */}
+      <About dataAbout={aboutUs} />
 
       <Projects dataProjects={projects} />
 
@@ -107,6 +111,7 @@ export const getStaticProps: GetStaticProps<any> = async () => {
       logo: await getLogoContent(),
       services: await getServicesContent(),
       numberWp: await getNumberWpContent(),
+      aboutUs: await getAboutUsContent(),
       // googleMap: await getMapContent(),
       contact: await getDataContact(),
       footer: await getFooterContent()

@@ -11,7 +11,7 @@ export const ContentProjects = styled(Element)`
 	height: auto;
 	padding: 50px 0 80px;
 	${breakpoint('md')`
-		padding: 120px 0 50px;
+		padding: 100px 0 50px;
   `}
 `
 export const ContainProjects = styled.div`
@@ -69,10 +69,10 @@ export const BoxProjectsInfo = styled.div`
   margin-bottom: 40px;
   h2 {
     text-align: center !important;
+    margin-bottom: 20px;
   }
   p {
     line-height: 1.3;
-    text-align: center;
   }
   ${breakpoint('md')`
 		width: 100%;

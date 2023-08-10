@@ -14,7 +14,7 @@ export const ContentServices = styled(Element)`
   background: #fff;
   margin: 60px 0px;
   ${breakpoint('lg')`
-    margin: 120px 0px;
+    margin: 120px 0px 70px;
 	`}
 `
 
@@ -33,7 +33,6 @@ export const ContentServicesText = styled.div`
 `
 
 export const InfoServices = styled.div`
-  /* width: 75%; */
   width: 100%;
   height: 80%;
   max-width: 1300px;
@@ -46,10 +45,10 @@ export const InfoServices = styled.div`
   color: #000;
 
   h2 {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     ${breakpoint('lg')`
-    margin-bottom: 32px
-	`};
+      margin-bottom: 70px
+    `};
   }
 `
 

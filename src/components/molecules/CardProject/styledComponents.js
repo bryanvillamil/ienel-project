@@ -77,7 +77,19 @@ export const ButtonCard = styled.div`
   margin: 0 auto;
   background-color: transparent;
   border-radius: ${(props) => props.theme.borderRadius.card};
-`
+`;
+
+
+export const BoxImageSLider = styled.div`
+  .imageSlide {
+    object-fit: contain;
+    height: 75vh;
+  }
+`;
+
+export const DescriptionSlider = styled.p`
+  margin-top: 0;
+`;
 
 
   /* ${breakpoint('md')`

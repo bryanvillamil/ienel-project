@@ -14,10 +14,10 @@ const MENU_LIST = [
     text: 'servicios',
     to: 'services'
   },
-  // {
-  //   text: 'sobre nosotros',
-  //   to: 'about'
-  // },
+  {
+    text: 'Quienes Somos',
+    to: 'about'
+  },
   {
     text: 'proyectos',
     to: 'projects'
@@ -49,11 +49,11 @@ export const Navbar: React.FC<INavbar> = ({ navActive, setNavActive }) => {
       <NavMenuList className={navActive ? 'active' : ''}>
         {MENU_LIST.map((menu, idx) => {
           const pathUrl = router.pathname.slice(1) // remove '/' the url
-
           return (
             <div key={idx} onClick={() => setActiveIdx(idx)}>
               <NavItem
                 active={activeIdx === idx || pathUrl === menu.text}
+                className={idx % 2 === 1 ? 'even' : 'odd'}
                 setNavActive={setNavActive}
                 {...menu}
               />

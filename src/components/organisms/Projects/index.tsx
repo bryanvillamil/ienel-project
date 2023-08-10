@@ -17,11 +17,14 @@ import { IPropsProject } from '@/typed/projects'
 import 'animate.css'
 
 interface IPropsData {
+  descriptionProyects?: string
+  titleProyects?: string
   description?: string
   items?: [IPropsProject]
 }
 
 export const Projects = ({ dataProjects }: { dataProjects: IPropsData }) => {
+  const { descriptionProyects, titleProyects } = dataProjects
   const items: any[] = dataProjects?.items ?? []
   const dataItems: IPropsProject[] = items ?? []
 
@@ -39,21 +42,15 @@ export const Projects = ({ dataProjects }: { dataProjects: IPropsData }) => {
                 <BoxProjectsInfo>
                   <Title
                     type={2}
-                    text="Nuestros Proyectos"
-                    color="#000"
+                    text={titleProyects || ''}
+                    color="#1B1918"
                     align="left"
                   />
                   <Paragraph
-                    text=" En esta sección, te presentamos algunos de nuestros
-                    proyectos más destacados y exitosos. Desde pequeñas empresas
-                    hasta grandes corporaciones, hemos tenido el privilegio de
-                    trabajar con una amplia variedad de clientes y sectores.
-                    Explora nuestra cartera de proyectos para obtener una visión
-                    más detallada de nuestro trabajo y ver cómo hemos ayudado a
-                    nuestros clientes a alcanzar sus objetivos."
+                    text={descriptionProyects || ''}
                     size={12}
                     color="#333"
-                    align="start"
+                    align="justify"
                     opacity={1}
                     margin={4}
                     paddingX={0}

@@ -71,12 +71,12 @@ export const NavMenuList = styled.div`
 
   ${breakpoint('md')`
     row-gap: 24px;
-    padding: 24px 16px;
+    padding: 24px 14px;
 		position: unset;
     flex-direction: row;
     min-height: fit-content;
     width: fit-content;
-    column-gap: 24px;
+    column-gap: 22px;
     align-items: center;
     box-shadow: none;
     background: none;
@@ -87,6 +87,10 @@ export const NavMenuList = styled.div`
         border: none;
       }
     }
+	`}
+  ${breakpoint('lg')`
+    padding: 24px 16px;
+    column-gap: 24px;
 	`}
 `;
 

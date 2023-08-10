@@ -4,14 +4,14 @@ import { Animate, Title } from '@components/index'
 import { IAboutData } from '@typed/index'
 import {
   ContentAbout,
-  BgFixedAbout,
+  // BgFixedAbout,
   ContainAbout,
   AboutBox,
   AboutRight,
   AboutLeft,
   AboutInfoBox
 } from './styledComponents'
-import BgAbout from '@assets/img/logo-clavija.png'
+// import BgAbout from '@assets/img/logo-clavija.png'
 import 'animate.css'
 
 export const About = ({ dataAbout }: { dataAbout: IAboutData }) => {
@@ -28,7 +28,7 @@ export const About = ({ dataAbout }: { dataAbout: IAboutData }) => {
 
   return (
     <ContentAbout name="about" id="about">
-      <BgFixedAbout style={{ backgroundImage: `url(${BgAbout.src})` }} />
+      {/* <BgFixedAbout style={{ backgroundImage: `url(${BgAbout.src})` }} /> */}
 
       <Animate
         entranceAnimation="animate__backInLeft"

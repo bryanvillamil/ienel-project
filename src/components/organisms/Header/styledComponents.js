@@ -82,14 +82,26 @@ export const ButtonVisited = styled(CustomButton)`
 	width: 85px;
 	margin: 0 25px 0 0;
 	display: none;
-	svg {
-		left: 4px;
-		position: relative;
-	}
 	&:hover {
 		background: ${props => props.theme.colors.colorSecondary};
 	}
 	${breakpoint('md')`
 		display: flex;
+		font-size: 0;
+		width: 40px;
+		svg {
+			width: 20px;
+    	height: 20px;
+		}
+	`}
+	${breakpoint('lg')`
+		font-size: 14px;
+		width: 85px;
+		svg {
+			left: 4px;
+			position: relative;
+			width: 16px;
+    	height: 16px;
+		}
 	`}
 `;

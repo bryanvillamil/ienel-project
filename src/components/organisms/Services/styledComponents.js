@@ -66,6 +66,5 @@ export const ServicesCards = styled.div`
 	`}
   ${breakpoint('lg')`
     justify-content: space-between;
-    // gap: 20px;
 	`}
 `

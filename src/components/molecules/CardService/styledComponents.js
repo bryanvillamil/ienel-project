@@ -154,7 +154,7 @@ export const Container = styled.div`
     }
   }
   &:hover ${BoxImage} {
-    transform: scale(1.2);
+    transform: scale(1.3);
   }
 
   ${breakpoint('xs')`

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { NavItem } from '@components/index'
-import { Menu, NavMenuBar, NavMenuList } from './styledComponents'
+import { Menu, NavMenuBar, NavMenuList, LinkPQRs } from './styledComponents'
 
 export interface INavbar {
   navActive: boolean
@@ -61,9 +61,9 @@ export const Navbar: React.FC<INavbar> = ({ navActive, setNavActive }) => {
           )
         })}
 
-        <Link href="/pqrs" className="pqrs">
+        <LinkPQRs href="/pqrs" className="pqrs">
           PQRs
-        </Link>
+        </LinkPQRs>
       </NavMenuList>
     </Menu>
   )

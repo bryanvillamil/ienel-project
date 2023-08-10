@@ -19,6 +19,7 @@ export const NavItem = ({
   return (
     <LinkCustomHRef
       to={to}
+      href={href}
       spy={true}
       smooth={true}
       duration={800}
